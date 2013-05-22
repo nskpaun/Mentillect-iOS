@@ -16,23 +16,27 @@
 @synthesize text;
 @synthesize poster;
 @synthesize created;
+@synthesize title;
 
 const NSString* postPicKey = @"thumbnail";
 const NSString* postURLKey = @"URL";
 const NSString* postTextKey = @"Text";
 const NSString* postUserKey = @"User";
+const NSString* postTitleKey = @"Title";
 
 
 +(Post*)createWithPicture:(UIImage*)picture
                   withUrl:(NSString*)url
                  withText:(NSString*)text
                withPoster:(MtUser*)poster
+                withTitle:(NSString *)title
 {
     Post *p = [[Post alloc] init];
     p.picture = picture;
     p.url = url;
     p.text = text;
     p.poster = poster;
+    p.title = title;
     
     return p;
     
@@ -58,6 +62,22 @@ const NSString* postUserKey = @"User";
     return [self pfDeserialize:[[query findObjects] objectAtIndex:0]];
 }
 
++(NSArray*)getRecentPosts
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query setLimit:50];
+    [query orderByDescending:@"createdAt"];
+    
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    
+    for (PFObject *obj in [query findObjects]) {
+        [array addObject:[Post pfDeserialize:obj]];
+    }
+    
+    return array;
+}
+
 +(Post*)pfDeserialize:(PFObject*)post
 {
     Post *p = [[Post alloc] init];
@@ -65,9 +85,11 @@ const NSString* postUserKey = @"User";
     NSData *data = [imgFile getData];
     p.picture = [UIImage imageWithData:data];
     PFUser *user = [post objectForKey:postUserKey];
-    p.poster = [MtUser getUserById:user.objectId];
+    [user fetchIfNeeded];
+    p.poster = [MtUser pfDeserialize:user];
     p.text = [post objectForKey:postTextKey];
     p.url = [post objectForKey:postURLKey];
+    p.title = [post objectForKey:postTitleKey];
     p.object = post;
     
     return p;
@@ -82,6 +104,7 @@ const NSString* postUserKey = @"User";
     NSData *data = UIImagePNGRepresentation(picture);
     PFFile *imageFile = [PFFile fileWithName:@"thumbnail.png" data:data];
     [obj setObject:imageFile forKey:postPicKey];
+    [obj setObject:title forKey:postTitleKey];
     
 
     

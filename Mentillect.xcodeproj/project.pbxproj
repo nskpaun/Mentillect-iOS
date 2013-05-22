@@ -51,6 +51,24 @@
 		E84305E8174B2BE7005D0784 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305E6174B2BE7005D0784 /* Activity.m */; };
 		E84305EB174B2F8A005D0784 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305EA174B2F8A005D0784 /* Comment.m */; };
 		E84305EC174B2F8A005D0784 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305EA174B2F8A005D0784 /* Comment.m */; };
+		E8B306FC174D2D3B003248EA /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B306F6174D2D3B003248EA /* HorizontalTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E8B306FD174D2D3B003248EA /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B306F6174D2D3B003248EA /* HorizontalTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E8B306FE174D2D3B003248EA /* PageLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B306F8174D2D3B003248EA /* PageLoopViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E8B306FF174D2D3B003248EA /* PageLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B306F8174D2D3B003248EA /* PageLoopViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E8B30700174D2D3B003248EA /* PageLoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B306F9174D2D3B003248EA /* PageLoopViewController.xib */; };
+		E8B30701174D2D3B003248EA /* PageLoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B306F9174D2D3B003248EA /* PageLoopViewController.xib */; };
+		E8B30706174D3266003248EA /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B30705174D3266003248EA /* ActivityCell.m */; };
+		E8B30707174D3266003248EA /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B30705174D3266003248EA /* ActivityCell.m */; };
+		E8B30709174D327D003248EA /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B30708174D327D003248EA /* ActivityCell.xib */; };
+		E8B3070A174D327D003248EA /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B30708174D327D003248EA /* ActivityCell.xib */; };
+		E8B3070E174D3855003248EA /* ActivityTableviewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B3070D174D3855003248EA /* ActivityTableviewDelegate.m */; };
+		E8B3070F174D3855003248EA /* ActivityTableviewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B3070D174D3855003248EA /* ActivityTableviewDelegate.m */; };
+		E8B30712174D4745003248EA /* StoryTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B30711174D4745003248EA /* StoryTableViewDelegate.m */; };
+		E8B30713174D4745003248EA /* StoryTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B30711174D4745003248EA /* StoryTableViewDelegate.m */; };
+		E8B30716174D475A003248EA /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B30715174D475A003248EA /* StoryCell.m */; };
+		E8B30717174D475A003248EA /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B30715174D475A003248EA /* StoryCell.m */; };
+		E8B30719174D477D003248EA /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B30718174D477D003248EA /* StoryCell.xib */; };
+		E8B3071A174D477D003248EA /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B30718174D477D003248EA /* StoryCell.xib */; };
 		E8C81F7C174C27CE00ADDDBC /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F7A174C27CE00ADDDBC /* RatingViewController.m */; };
 		E8C81F7D174C27CE00ADDDBC /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F7B174C27CE00ADDDBC /* RatingViewController.xib */; };
 		E8C81F81174C34B300ADDDBC /* PostSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F7F174C34B300ADDDBC /* PostSelectionViewController.m */; };
@@ -132,6 +150,21 @@
 		E84305E6174B2BE7005D0784 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E84305E9174B2F8A005D0784 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		E84305EA174B2F8A005D0784 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		E8B306F5174D2D3B003248EA /* HorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableView.h; sourceTree = "<group>"; };
+		E8B306F6174D2D3B003248EA /* HorizontalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableView.m; sourceTree = "<group>"; };
+		E8B306F7174D2D3B003248EA /* PageLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageLoopViewController.h; sourceTree = "<group>"; };
+		E8B306F8174D2D3B003248EA /* PageLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageLoopViewController.m; sourceTree = "<group>"; };
+		E8B306F9174D2D3B003248EA /* PageLoopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageLoopViewController.xib; sourceTree = "<group>"; };
+		E8B30704174D3266003248EA /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
+		E8B30705174D3266003248EA /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCell.m; sourceTree = "<group>"; };
+		E8B30708174D327D003248EA /* ActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
+		E8B3070C174D3855003248EA /* ActivityTableviewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableviewDelegate.h; sourceTree = "<group>"; };
+		E8B3070D174D3855003248EA /* ActivityTableviewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableviewDelegate.m; sourceTree = "<group>"; };
+		E8B30710174D4745003248EA /* StoryTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryTableViewDelegate.h; sourceTree = "<group>"; };
+		E8B30711174D4745003248EA /* StoryTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTableViewDelegate.m; sourceTree = "<group>"; };
+		E8B30714174D475A003248EA /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
+		E8B30715174D475A003248EA /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
+		E8B30718174D477D003248EA /* StoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
 		E8C81F79174C27CD00ADDDBC /* RatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewController.h; sourceTree = "<group>"; };
 		E8C81F7A174C27CE00ADDDBC /* RatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewController.m; sourceTree = "<group>"; };
 		E8C81F7B174C27CE00ADDDBC /* RatingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
@@ -234,6 +267,7 @@
 		E8430561174A7E47005D0784 /* Mentillect */ = {
 			isa = PBXGroup;
 			children = (
+				E8B3070B174D3825003248EA /* Delegates */,
 				E8C81F97174C3DCF00ADDDBC /* Layouts */,
 				E8C81F83174C362400ADDDBC /* OutsideProjects */,
 				E84305D8174B2B9D005D0784 /* Models */,
@@ -244,9 +278,9 @@
 				E843056B174A7E47005D0784 /* AppDelegate.m */,
 				E8430573174A7E47005D0784 /* MasterViewController.h */,
 				E8430574174A7E47005D0784 /* MasterViewController.m */,
+				E8430579174A7E47005D0784 /* MasterViewController.xib */,
 				E8430576174A7E47005D0784 /* MyProfileViewController.h */,
 				E8430577174A7E47005D0784 /* MyProfileViewController.m */,
-				E8430579174A7E47005D0784 /* MasterViewController.xib */,
 				E843057C174A7E47005D0784 /* MyProfileViewController.xib */,
 				E8430562174A7E47005D0784 /* Supporting Files */,
 			);
@@ -325,9 +359,25 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		E8B3070B174D3825003248EA /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E8B3070C174D3855003248EA /* ActivityTableviewDelegate.h */,
+				E8B3070D174D3855003248EA /* ActivityTableviewDelegate.m */,
+				E8B30710174D4745003248EA /* StoryTableViewDelegate.h */,
+				E8B30711174D4745003248EA /* StoryTableViewDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
 		E8C81F83174C362400ADDDBC /* OutsideProjects */ = {
 			isa = PBXGroup;
 			children = (
+				E8B306F5174D2D3B003248EA /* HorizontalTableView.h */,
+				E8B306F6174D2D3B003248EA /* HorizontalTableView.m */,
+				E8B306F7174D2D3B003248EA /* PageLoopViewController.h */,
+				E8B306F8174D2D3B003248EA /* PageLoopViewController.m */,
+				E8B306F9174D2D3B003248EA /* PageLoopViewController.xib */,
 				E8C81F84174C363700ADDDBC /* HTMLNode.h */,
 				E8C81F85174C363700ADDDBC /* HTMLNode.m */,
 				E8C81F86174C363700ADDDBC /* HTMLParser.h */,
@@ -339,6 +389,12 @@
 		E8C81F97174C3DCF00ADDDBC /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
+				E8B30704174D3266003248EA /* ActivityCell.h */,
+				E8B30705174D3266003248EA /* ActivityCell.m */,
+				E8B30708174D327D003248EA /* ActivityCell.xib */,
+				E8B30714174D475A003248EA /* StoryCell.h */,
+				E8B30715174D475A003248EA /* StoryCell.m */,
+				E8B30718174D477D003248EA /* StoryCell.xib */,
 			);
 			name = Layouts;
 			sourceTree = "<group>";
@@ -425,6 +481,9 @@
 				E8C81F82174C34B300ADDDBC /* PostSelectionViewController.xib in Resources */,
 				E8C81F95174C37D200ADDDBC /* WebPostViewController.xib in Resources */,
 				E8C81F9D174C480900ADDDBC /* JournalPostViewController.xib in Resources */,
+				E8B30700174D2D3B003248EA /* PageLoopViewController.xib in Resources */,
+				E8B30709174D327D003248EA /* ActivityCell.xib in Resources */,
+				E8B30719174D477D003248EA /* StoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +495,9 @@
 				E84305D7174B299A005D0784 /* MtLoginViewController.xib in Resources */,
 				E8C81F96174C37D200ADDDBC /* WebPostViewController.xib in Resources */,
 				E8C81F9E174C480900ADDDBC /* JournalPostViewController.xib in Resources */,
+				E8B30701174D2D3B003248EA /* PageLoopViewController.xib in Resources */,
+				E8B3070A174D327D003248EA /* ActivityCell.xib in Resources */,
+				E8B3071A174D477D003248EA /* StoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +541,12 @@
 				E8C81F8A174C363800ADDDBC /* HTMLParser.m in Sources */,
 				E8C81F93174C37D200ADDDBC /* WebPostViewController.m in Sources */,
 				E8C81F9B174C480900ADDDBC /* JournalPostViewController.m in Sources */,
+				E8B306FC174D2D3B003248EA /* HorizontalTableView.m in Sources */,
+				E8B306FE174D2D3B003248EA /* PageLoopViewController.m in Sources */,
+				E8B30706174D3266003248EA /* ActivityCell.m in Sources */,
+				E8B3070E174D3855003248EA /* ActivityTableviewDelegate.m in Sources */,
+				E8B30712174D4745003248EA /* StoryTableViewDelegate.m in Sources */,
+				E8B30716174D475A003248EA /* StoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +565,12 @@
 				E8C81F8B174C363800ADDDBC /* HTMLParser.m in Sources */,
 				E8C81F94174C37D200ADDDBC /* WebPostViewController.m in Sources */,
 				E8C81F9C174C480900ADDDBC /* JournalPostViewController.m in Sources */,
+				E8B306FD174D2D3B003248EA /* HorizontalTableView.m in Sources */,
+				E8B306FF174D2D3B003248EA /* PageLoopViewController.m in Sources */,
+				E8B30707174D3266003248EA /* ActivityCell.m in Sources */,
+				E8B3070F174D3855003248EA /* ActivityTableviewDelegate.m in Sources */,
+				E8B30713174D4745003248EA /* StoryTableViewDelegate.m in Sources */,
+				E8B30717174D475A003248EA /* StoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +690,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mentillect/Mentillect-Prefix.pch";
 				INFOPLIST_FILE = "Mentillect/Mentillect-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -631,6 +709,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mentillect/Mentillect-Prefix.pch";
 				INFOPLIST_FILE = "Mentillect/Mentillect-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -648,6 +730,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mentillect/Mentillect-Prefix.pch";
 				INFOPLIST_FILE = "MentillectTests/MentillectTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -666,6 +752,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mentillect/Mentillect-Prefix.pch";
 				INFOPLIST_FILE = "MentillectTests/MentillectTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

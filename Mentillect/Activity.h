@@ -10,9 +10,9 @@
 #import "MtUser.h"
 
 typedef enum {
-    Comment,
-    Rating,
-    Post
+    CommentType,
+    RatingType,
+    PostType
 } ActivityType;
 
 @interface Activity : NSObject
@@ -21,8 +21,7 @@ typedef enum {
 @property(nonatomic,strong)MtUser* user;
 @property(nonatomic,strong)NSObject* referent;
 @property(nonatomic,copy)NSString* text;
-@property(nonatomic,copy)NSString* picUrl;
-@property(nonatomic,strong)NSDate* created;
+@property(nonatomic,copy)NSString* activityInfo;
 
 +(NSArray*)getLatestActivities;
 

@@ -14,6 +14,7 @@
     NSMutableArray *imgs;
     UIPopoverController *myPopover;
     IBOutlet UITextField *webAddress;
+    IBOutlet UITextField *titleText;
 }
 
 @end

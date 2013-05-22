@@ -59,7 +59,11 @@
 
 - (IBAction)post:(id)sender {
     if (selectedImage) {
-        Post *p = [Post createWithPicture:selectedImage withUrl:@"" withText:textArea.text withPoster:[MtUser getCurrentUser]];
+        NSString *title = titleText.text;
+        if (title.length<1) {
+            title = @"My Post";
+        }
+        Post *p = [Post createWithPicture:selectedImage withUrl:@"" withText:textArea.text withPoster:[MtUser getCurrentUser] withTitle:title];
         [p save];
         [MentillectAppDelegate.navController popToRootViewControllerAnimated:YES];
     }

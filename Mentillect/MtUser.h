@@ -34,6 +34,6 @@
 -(BOOL)destroy;
 -(NSString*)getObjectId;
 +(MtUser*)getCurrentUser;
-+(MtUser*)getUserById:(NSString*)userId;
++(MtUser*)pfDeserialize:(PFUser*)user;
 
 @end

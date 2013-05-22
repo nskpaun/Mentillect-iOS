@@ -11,6 +11,7 @@
 #import "HTMLNode.h"
 #import "MtUser.h"
 #import "Post.h"
+#import "Comment.h"
 #import "Mentillect.h"
 
 @interface WebPostViewController ()
@@ -105,10 +106,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [myPopover dismissPopoverAnimated:YES];
-    NSString *url = webView.request.URL.absoluteString;;
+    NSString *url = webView.request.URL.absoluteString;
+    NSString *title = titleText.text;
+    if (title.length<1) {
+        title = @"My Post";
+    }
     
-    Post *post = [Post createWithPicture:[imgs objectAtIndex:indexPath.row] withUrl:url withText:@"" withPoster:[MtUser getCurrentUser]];
+    Post *post = [Post createWithPicture:[imgs objectAtIndex:indexPath.row] withUrl:url withText:@"" withPoster:[MtUser getCurrentUser] withTitle:title];
     [post save];
+    if (commentBox.text.length>0) {
+        Comment *comm = [Comment createCommentWithText:commentBox.text fromUser:[MtUser getCurrentUser] toUser:nil forPost:post];
+        [comm save];
+    }
     
     [MentillectAppDelegate.navController popToRootViewControllerAnimated:YES];
 

@@ -10,6 +10,7 @@
 
 @interface JournalPostViewController : UIViewController <UIImagePickerControllerDelegate> {
     
+    IBOutlet UITextField *titleText;
     IBOutlet UITextView *textArea;
     IBOutlet UIButton *imageButton;
     UIPopoverController *myPopover;

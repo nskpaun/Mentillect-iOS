@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "MtUser.h"
+#import "ActivityTableviewDelegate.h"
+#import "StoryTableViewDelegate.h"
+#import "HorizontalTableView.h"
 
 @interface MyProfileViewController : UIViewController <UISplitViewControllerDelegate> {
     MtUser *user;
+    ActivityTableviewDelegate *activityTableDelegate;
+    StoryTableViewDelegate *storyTableDelegate;
+    IBOutlet UITableView *activityTable;
+    IBOutlet HorizontalTableView *storiesTable;
 }
 
 @property (strong, nonatomic) id detailItem;

@@ -85,10 +85,10 @@ const NSString* ratingKey = @"Rating";
 }
 +(MtUser*)getUserById:(NSString*)userId
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query whereKey:@"objectId" equalTo:userId];
-    
-    return [self pfDeserialize:[[query findObjects] objectAtIndex:0]];
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"objectId" containedIn:[NSArray arrayWithObject:userId]];
+    NSArray* array = [query findObjects];
+    return [self pfDeserialize:[array objectAtIndex:0]];
     
 }
 

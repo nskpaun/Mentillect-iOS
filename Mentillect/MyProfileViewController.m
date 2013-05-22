@@ -9,6 +9,8 @@
 #import "MyProfileViewController.h"
 #import "MtLoginViewController.h"
 #import "Mentillect.h"
+#import "Activity.h"
+#import "Post.h"
 
 @interface MyProfileViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -52,12 +54,25 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+
     [super viewDidAppear:animated];
     user = [MtUser getCurrentUser];
     if (!user) {
         MtLoginViewController *livc = [[MtLoginViewController alloc] initWithNibName:@"MtLoginViewController" bundle:nil];
         [MentillectAppDelegate.navController pushViewController:livc animated:YES];
+    } else {
+        activityTableDelegate = [[ActivityTableviewDelegate alloc] initWithActivities:[Activity getLatestActivities]];
+        [activityTable setDataSource:activityTableDelegate];
+        [activityTable setDelegate:activityTableDelegate];
+        [activityTable reloadData];
+        
+        storyTableDelegate = [[StoryTableViewDelegate alloc] initWithStories:[Post getRecentPosts]];
+        [storiesTable setDelegate:storyTableDelegate];
+        [storiesTable refreshData];
+        
     }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

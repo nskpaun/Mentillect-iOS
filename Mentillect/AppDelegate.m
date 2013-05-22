@@ -38,7 +38,7 @@
     MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
     UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
     
-    MyProfileViewController *detailViewController = [[MyProfileViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    MyProfileViewController *detailViewController = [[MyProfileViewController alloc] initWithNibName:@"MyProfileViewController" bundle:nil];
     UINavigationController *detailNavigationController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
     
     masterViewController.detailViewController = detailViewController;
