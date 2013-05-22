@@ -1,0 +1,708 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E843055C174A7E47005D0784 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055B174A7E47005D0784 /* UIKit.framework */; };
+		E843055E174A7E47005D0784 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055D174A7E47005D0784 /* Foundation.framework */; };
+		E8430560174A7E47005D0784 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055F174A7E47005D0784 /* CoreGraphics.framework */; };
+		E8430566174A7E47005D0784 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8430564174A7E47005D0784 /* InfoPlist.strings */; };
+		E8430568174A7E47005D0784 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8430567174A7E47005D0784 /* main.m */; };
+		E843056C174A7E47005D0784 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E843056B174A7E47005D0784 /* AppDelegate.m */; };
+		E843056E174A7E47005D0784 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E843056D174A7E47005D0784 /* Default.png */; };
+		E8430570174A7E47005D0784 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E843056F174A7E47005D0784 /* Default@2x.png */; };
+		E8430572174A7E47005D0784 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8430571174A7E47005D0784 /* Default-568h@2x.png */; };
+		E8430575174A7E47005D0784 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8430574174A7E47005D0784 /* MasterViewController.m */; };
+		E8430578174A7E47005D0784 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8430577174A7E47005D0784 /* MyProfileViewController.m */; };
+		E843057B174A7E47005D0784 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8430579174A7E47005D0784 /* MasterViewController.xib */; };
+		E843057E174A7E47005D0784 /* MyProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E843057C174A7E47005D0784 /* MyProfileViewController.xib */; };
+		E8430586174A7E47005D0784 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8430585174A7E47005D0784 /* SenTestingKit.framework */; };
+		E8430587174A7E47005D0784 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055B174A7E47005D0784 /* UIKit.framework */; };
+		E8430588174A7E47005D0784 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055D174A7E47005D0784 /* Foundation.framework */; };
+		E8430590174A7E47005D0784 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E843058E174A7E47005D0784 /* InfoPlist.strings */; };
+		E8430593174A7E47005D0784 /* MentillectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E8430592174A7E47005D0784 /* MentillectTests.m */; };
+		E84305B6174A7FDD005D0784 /* Mentillect.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305B5174A7FDD005D0784 /* Mentillect.m */; };
+		E84305B8174A86DE005D0784 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305B7174A86DE005D0784 /* Parse.framework */; };
+		E84305B9174A86DE005D0784 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305B7174A86DE005D0784 /* Parse.framework */; };
+		E84305BB174A871C005D0784 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305BA174A871C005D0784 /* AudioToolbox.framework */; };
+		E84305BD174A8723005D0784 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305BC174A8723005D0784 /* CFNetwork.framework */; };
+		E84305BF174A8730005D0784 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305BE174A8730005D0784 /* CoreLocation.framework */; };
+		E84305C1174A873E005D0784 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305C0174A873E005D0784 /* libz.1.1.3.dylib */; };
+		E84305C3174A8744005D0784 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305C2174A8744005D0784 /* MobileCoreServices.framework */; };
+		E84305C5174A874B005D0784 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305C4174A874A005D0784 /* QuartzCore.framework */; };
+		E84305C7174A8750005D0784 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305C6174A8750005D0784 /* Security.framework */; };
+		E84305C9174A8758005D0784 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305C8174A8758005D0784 /* StoreKit.framework */; };
+		E84305CB174A8760005D0784 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84305CA174A8760005D0784 /* SystemConfiguration.framework */; };
+		E84305D4174B299A005D0784 /* MtLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305D2174B299A005D0784 /* MtLoginViewController.m */; };
+		E84305D5174B299A005D0784 /* MtLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305D2174B299A005D0784 /* MtLoginViewController.m */; };
+		E84305D6174B299A005D0784 /* MtLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84305D3174B299A005D0784 /* MtLoginViewController.xib */; };
+		E84305D7174B299A005D0784 /* MtLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E84305D3174B299A005D0784 /* MtLoginViewController.xib */; };
+		E84305DB174B2BBC005D0784 /* MtUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305DA174B2BBC005D0784 /* MtUser.m */; };
+		E84305DC174B2BBC005D0784 /* MtUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305DA174B2BBC005D0784 /* MtUser.m */; };
+		E84305DF174B2BCC005D0784 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305DE174B2BCC005D0784 /* Post.m */; };
+		E84305E0174B2BCC005D0784 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305DE174B2BCC005D0784 /* Post.m */; };
+		E84305E3174B2BD8005D0784 /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305E2174B2BD8005D0784 /* Rating.m */; };
+		E84305E4174B2BD8005D0784 /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305E2174B2BD8005D0784 /* Rating.m */; };
+		E84305E7174B2BE7005D0784 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305E6174B2BE7005D0784 /* Activity.m */; };
+		E84305E8174B2BE7005D0784 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305E6174B2BE7005D0784 /* Activity.m */; };
+		E84305EB174B2F8A005D0784 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305EA174B2F8A005D0784 /* Comment.m */; };
+		E84305EC174B2F8A005D0784 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305EA174B2F8A005D0784 /* Comment.m */; };
+		E8C81F7C174C27CE00ADDDBC /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F7A174C27CE00ADDDBC /* RatingViewController.m */; };
+		E8C81F7D174C27CE00ADDDBC /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F7B174C27CE00ADDDBC /* RatingViewController.xib */; };
+		E8C81F81174C34B300ADDDBC /* PostSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F7F174C34B300ADDDBC /* PostSelectionViewController.m */; };
+		E8C81F82174C34B300ADDDBC /* PostSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F80174C34B300ADDDBC /* PostSelectionViewController.xib */; };
+		E8C81F88174C363800ADDDBC /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F85174C363700ADDDBC /* HTMLNode.m */; };
+		E8C81F89174C363800ADDDBC /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F85174C363700ADDDBC /* HTMLNode.m */; };
+		E8C81F8A174C363800ADDDBC /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F87174C363700ADDDBC /* HTMLParser.m */; };
+		E8C81F8B174C363800ADDDBC /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F87174C363700ADDDBC /* HTMLParser.m */; };
+		E8C81F8D174C366900ADDDBC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C81F8C174C366900ADDDBC /* libxml2.dylib */; };
+		E8C81F8F174C369800ADDDBC /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C81F8E174C369800ADDDBC /* libxml2.2.dylib */; };
+		E8C81F93174C37D200ADDDBC /* WebPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F91174C37D200ADDDBC /* WebPostViewController.m */; };
+		E8C81F94174C37D200ADDDBC /* WebPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F91174C37D200ADDDBC /* WebPostViewController.m */; };
+		E8C81F95174C37D200ADDDBC /* WebPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F92174C37D200ADDDBC /* WebPostViewController.xib */; };
+		E8C81F96174C37D200ADDDBC /* WebPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F92174C37D200ADDDBC /* WebPostViewController.xib */; };
+		E8C81F9B174C480900ADDDBC /* JournalPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F99174C480900ADDDBC /* JournalPostViewController.m */; };
+		E8C81F9C174C480900ADDDBC /* JournalPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F99174C480900ADDDBC /* JournalPostViewController.m */; };
+		E8C81F9D174C480900ADDDBC /* JournalPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F9A174C480900ADDDBC /* JournalPostViewController.xib */; };
+		E8C81F9E174C480900ADDDBC /* JournalPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F9A174C480900ADDDBC /* JournalPostViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8430589174A7E47005D0784 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8430550174A7E47005D0784 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8430557174A7E47005D0784;
+			remoteInfo = Mentillect;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E8430558174A7E47005D0784 /* Mentillect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mentillect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E843055B174A7E47005D0784 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E843055D174A7E47005D0784 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E843055F174A7E47005D0784 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E8430563174A7E47005D0784 /* Mentillect-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mentillect-Info.plist"; sourceTree = "<group>"; };
+		E8430565174A7E47005D0784 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E8430567174A7E47005D0784 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8430569174A7E47005D0784 /* Mentillect-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mentillect-Prefix.pch"; sourceTree = "<group>"; };
+		E843056A174A7E47005D0784 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E843056B174A7E47005D0784 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E843056D174A7E47005D0784 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E843056F174A7E47005D0784 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E8430571174A7E47005D0784 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E8430573174A7E47005D0784 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		E8430574174A7E47005D0784 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		E8430576174A7E47005D0784 /* MyProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		E8430577174A7E47005D0784 /* MyProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		E843057A174A7E47005D0784 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
+		E843057D174A7E47005D0784 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MyProfileViewController.xib; sourceTree = "<group>"; };
+		E8430584174A7E47005D0784 /* MentillectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MentillectTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8430585174A7E47005D0784 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E843058D174A7E47005D0784 /* MentillectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MentillectTests-Info.plist"; sourceTree = "<group>"; };
+		E843058F174A7E47005D0784 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E8430591174A7E47005D0784 /* MentillectTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MentillectTests.h; sourceTree = "<group>"; };
+		E8430592174A7E47005D0784 /* MentillectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MentillectTests.m; sourceTree = "<group>"; };
+		E84305B4174A7FDD005D0784 /* Mentillect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mentillect.h; sourceTree = "<group>"; };
+		E84305B5174A7FDD005D0784 /* Mentillect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mentillect.m; sourceTree = "<group>"; };
+		E84305B7174A86DE005D0784 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E84305BA174A871C005D0784 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E84305BC174A8723005D0784 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E84305BE174A8730005D0784 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E84305C0174A873E005D0784 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		E84305C2174A8744005D0784 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E84305C4174A874A005D0784 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E84305C6174A8750005D0784 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E84305C8174A8758005D0784 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E84305CA174A8760005D0784 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E84305D1174B299A005D0784 /* MtLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtLoginViewController.h; sourceTree = "<group>"; };
+		E84305D2174B299A005D0784 /* MtLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtLoginViewController.m; sourceTree = "<group>"; };
+		E84305D3174B299A005D0784 /* MtLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MtLoginViewController.xib; sourceTree = "<group>"; };
+		E84305D9174B2BBC005D0784 /* MtUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtUser.h; sourceTree = "<group>"; };
+		E84305DA174B2BBC005D0784 /* MtUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtUser.m; sourceTree = "<group>"; };
+		E84305DD174B2BCC005D0784 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		E84305DE174B2BCC005D0784 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		E84305E1174B2BD8005D0784 /* Rating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rating.h; sourceTree = "<group>"; };
+		E84305E2174B2BD8005D0784 /* Rating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rating.m; sourceTree = "<group>"; };
+		E84305E5174B2BE7005D0784 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		E84305E6174B2BE7005D0784 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		E84305E9174B2F8A005D0784 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		E84305EA174B2F8A005D0784 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		E8C81F79174C27CD00ADDDBC /* RatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewController.h; sourceTree = "<group>"; };
+		E8C81F7A174C27CE00ADDDBC /* RatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewController.m; sourceTree = "<group>"; };
+		E8C81F7B174C27CE00ADDDBC /* RatingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
+		E8C81F7E174C34B300ADDDBC /* PostSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostSelectionViewController.h; sourceTree = "<group>"; };
+		E8C81F7F174C34B300ADDDBC /* PostSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostSelectionViewController.m; sourceTree = "<group>"; };
+		E8C81F80174C34B300ADDDBC /* PostSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostSelectionViewController.xib; sourceTree = "<group>"; };
+		E8C81F84174C363700ADDDBC /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		E8C81F85174C363700ADDDBC /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		E8C81F86174C363700ADDDBC /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		E8C81F87174C363700ADDDBC /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
+		E8C81F8C174C366900ADDDBC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		E8C81F8E174C369800ADDDBC /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		E8C81F90174C37D200ADDDBC /* WebPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPostViewController.h; sourceTree = "<group>"; };
+		E8C81F91174C37D200ADDDBC /* WebPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPostViewController.m; sourceTree = "<group>"; };
+		E8C81F92174C37D200ADDDBC /* WebPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebPostViewController.xib; sourceTree = "<group>"; };
+		E8C81F98174C480900ADDDBC /* JournalPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalPostViewController.h; sourceTree = "<group>"; };
+		E8C81F99174C480900ADDDBC /* JournalPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalPostViewController.m; sourceTree = "<group>"; };
+		E8C81F9A174C480900ADDDBC /* JournalPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalPostViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8430555174A7E47005D0784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8C81F8F174C369800ADDDBC /* libxml2.2.dylib in Frameworks */,
+				E8C81F8D174C366900ADDDBC /* libxml2.dylib in Frameworks */,
+				E84305CB174A8760005D0784 /* SystemConfiguration.framework in Frameworks */,
+				E84305C9174A8758005D0784 /* StoreKit.framework in Frameworks */,
+				E84305C7174A8750005D0784 /* Security.framework in Frameworks */,
+				E84305C5174A874B005D0784 /* QuartzCore.framework in Frameworks */,
+				E84305C3174A8744005D0784 /* MobileCoreServices.framework in Frameworks */,
+				E84305C1174A873E005D0784 /* libz.1.1.3.dylib in Frameworks */,
+				E84305BF174A8730005D0784 /* CoreLocation.framework in Frameworks */,
+				E8430560174A7E47005D0784 /* CoreGraphics.framework in Frameworks */,
+				E84305BD174A8723005D0784 /* CFNetwork.framework in Frameworks */,
+				E84305BB174A871C005D0784 /* AudioToolbox.framework in Frameworks */,
+				E843055C174A7E47005D0784 /* UIKit.framework in Frameworks */,
+				E843055E174A7E47005D0784 /* Foundation.framework in Frameworks */,
+				E84305B8174A86DE005D0784 /* Parse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8430580174A7E47005D0784 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8430586174A7E47005D0784 /* SenTestingKit.framework in Frameworks */,
+				E8430587174A7E47005D0784 /* UIKit.framework in Frameworks */,
+				E8430588174A7E47005D0784 /* Foundation.framework in Frameworks */,
+				E84305B9174A86DE005D0784 /* Parse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E843054F174A7E47005D0784 = {
+			isa = PBXGroup;
+			children = (
+				E8C81F8E174C369800ADDDBC /* libxml2.2.dylib */,
+				E8C81F8C174C366900ADDDBC /* libxml2.dylib */,
+				E84305CA174A8760005D0784 /* SystemConfiguration.framework */,
+				E84305C8174A8758005D0784 /* StoreKit.framework */,
+				E84305C6174A8750005D0784 /* Security.framework */,
+				E84305C4174A874A005D0784 /* QuartzCore.framework */,
+				E84305C2174A8744005D0784 /* MobileCoreServices.framework */,
+				E84305C0174A873E005D0784 /* libz.1.1.3.dylib */,
+				E84305BE174A8730005D0784 /* CoreLocation.framework */,
+				E84305BC174A8723005D0784 /* CFNetwork.framework */,
+				E84305BA174A871C005D0784 /* AudioToolbox.framework */,
+				E8430561174A7E47005D0784 /* Mentillect */,
+				E843058B174A7E47005D0784 /* MentillectTests */,
+				E843055A174A7E47005D0784 /* Frameworks */,
+				E8430559174A7E47005D0784 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8430559174A7E47005D0784 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8430558174A7E47005D0784 /* Mentillect.app */,
+				E8430584174A7E47005D0784 /* MentillectTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E843055A174A7E47005D0784 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E84305B7174A86DE005D0784 /* Parse.framework */,
+				E843055B174A7E47005D0784 /* UIKit.framework */,
+				E843055D174A7E47005D0784 /* Foundation.framework */,
+				E843055F174A7E47005D0784 /* CoreGraphics.framework */,
+				E8430585174A7E47005D0784 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8430561174A7E47005D0784 /* Mentillect */ = {
+			isa = PBXGroup;
+			children = (
+				E8C81F97174C3DCF00ADDDBC /* Layouts */,
+				E8C81F83174C362400ADDDBC /* OutsideProjects */,
+				E84305D8174B2B9D005D0784 /* Models */,
+				E84305CC174B25D8005D0784 /* ViewControllers */,
+				E84305B4174A7FDD005D0784 /* Mentillect.h */,
+				E84305B5174A7FDD005D0784 /* Mentillect.m */,
+				E843056A174A7E47005D0784 /* AppDelegate.h */,
+				E843056B174A7E47005D0784 /* AppDelegate.m */,
+				E8430573174A7E47005D0784 /* MasterViewController.h */,
+				E8430574174A7E47005D0784 /* MasterViewController.m */,
+				E8430576174A7E47005D0784 /* MyProfileViewController.h */,
+				E8430577174A7E47005D0784 /* MyProfileViewController.m */,
+				E8430579174A7E47005D0784 /* MasterViewController.xib */,
+				E843057C174A7E47005D0784 /* MyProfileViewController.xib */,
+				E8430562174A7E47005D0784 /* Supporting Files */,
+			);
+			path = Mentillect;
+			sourceTree = "<group>";
+		};
+		E8430562174A7E47005D0784 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8430563174A7E47005D0784 /* Mentillect-Info.plist */,
+				E8430564174A7E47005D0784 /* InfoPlist.strings */,
+				E8430567174A7E47005D0784 /* main.m */,
+				E8430569174A7E47005D0784 /* Mentillect-Prefix.pch */,
+				E843056D174A7E47005D0784 /* Default.png */,
+				E843056F174A7E47005D0784 /* Default@2x.png */,
+				E8430571174A7E47005D0784 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E843058B174A7E47005D0784 /* MentillectTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8430591174A7E47005D0784 /* MentillectTests.h */,
+				E8430592174A7E47005D0784 /* MentillectTests.m */,
+				E843058C174A7E47005D0784 /* Supporting Files */,
+			);
+			path = MentillectTests;
+			sourceTree = "<group>";
+		};
+		E843058C174A7E47005D0784 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E843058D174A7E47005D0784 /* MentillectTests-Info.plist */,
+				E843058E174A7E47005D0784 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E84305CC174B25D8005D0784 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E84305D1174B299A005D0784 /* MtLoginViewController.h */,
+				E84305D2174B299A005D0784 /* MtLoginViewController.m */,
+				E84305D3174B299A005D0784 /* MtLoginViewController.xib */,
+				E8C81F79174C27CD00ADDDBC /* RatingViewController.h */,
+				E8C81F7A174C27CE00ADDDBC /* RatingViewController.m */,
+				E8C81F7B174C27CE00ADDDBC /* RatingViewController.xib */,
+				E8C81F7E174C34B300ADDDBC /* PostSelectionViewController.h */,
+				E8C81F7F174C34B300ADDDBC /* PostSelectionViewController.m */,
+				E8C81F80174C34B300ADDDBC /* PostSelectionViewController.xib */,
+				E8C81F90174C37D200ADDDBC /* WebPostViewController.h */,
+				E8C81F91174C37D200ADDDBC /* WebPostViewController.m */,
+				E8C81F92174C37D200ADDDBC /* WebPostViewController.xib */,
+				E8C81F98174C480900ADDDBC /* JournalPostViewController.h */,
+				E8C81F99174C480900ADDDBC /* JournalPostViewController.m */,
+				E8C81F9A174C480900ADDDBC /* JournalPostViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E84305D8174B2B9D005D0784 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E84305D9174B2BBC005D0784 /* MtUser.h */,
+				E84305DA174B2BBC005D0784 /* MtUser.m */,
+				E84305DD174B2BCC005D0784 /* Post.h */,
+				E84305DE174B2BCC005D0784 /* Post.m */,
+				E84305E1174B2BD8005D0784 /* Rating.h */,
+				E84305E2174B2BD8005D0784 /* Rating.m */,
+				E84305E5174B2BE7005D0784 /* Activity.h */,
+				E84305E6174B2BE7005D0784 /* Activity.m */,
+				E84305E9174B2F8A005D0784 /* Comment.h */,
+				E84305EA174B2F8A005D0784 /* Comment.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E8C81F83174C362400ADDDBC /* OutsideProjects */ = {
+			isa = PBXGroup;
+			children = (
+				E8C81F84174C363700ADDDBC /* HTMLNode.h */,
+				E8C81F85174C363700ADDDBC /* HTMLNode.m */,
+				E8C81F86174C363700ADDDBC /* HTMLParser.h */,
+				E8C81F87174C363700ADDDBC /* HTMLParser.m */,
+			);
+			name = OutsideProjects;
+			sourceTree = "<group>";
+		};
+		E8C81F97174C3DCF00ADDDBC /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8430557174A7E47005D0784 /* Mentillect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8430596174A7E47005D0784 /* Build configuration list for PBXNativeTarget "Mentillect" */;
+			buildPhases = (
+				E8430554174A7E47005D0784 /* Sources */,
+				E8430555174A7E47005D0784 /* Frameworks */,
+				E8430556174A7E47005D0784 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mentillect;
+			productName = Mentillect;
+			productReference = E8430558174A7E47005D0784 /* Mentillect.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8430583174A7E47005D0784 /* MentillectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8430599174A7E47005D0784 /* Build configuration list for PBXNativeTarget "MentillectTests" */;
+			buildPhases = (
+				E843057F174A7E47005D0784 /* Sources */,
+				E8430580174A7E47005D0784 /* Frameworks */,
+				E8430581174A7E47005D0784 /* Resources */,
+				E8430582174A7E47005D0784 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E843058A174A7E47005D0784 /* PBXTargetDependency */,
+			);
+			name = MentillectTests;
+			productName = MentillectTests;
+			productReference = E8430584174A7E47005D0784 /* MentillectTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8430550174A7E47005D0784 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Instru.mental;
+			};
+			buildConfigurationList = E8430553174A7E47005D0784 /* Build configuration list for PBXProject "Mentillect" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E843054F174A7E47005D0784;
+			productRefGroup = E8430559174A7E47005D0784 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8430557174A7E47005D0784 /* Mentillect */,
+				E8430583174A7E47005D0784 /* MentillectTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8430556174A7E47005D0784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8430566174A7E47005D0784 /* InfoPlist.strings in Resources */,
+				E843056E174A7E47005D0784 /* Default.png in Resources */,
+				E8430570174A7E47005D0784 /* Default@2x.png in Resources */,
+				E8430572174A7E47005D0784 /* Default-568h@2x.png in Resources */,
+				E843057B174A7E47005D0784 /* MasterViewController.xib in Resources */,
+				E843057E174A7E47005D0784 /* MyProfileViewController.xib in Resources */,
+				E84305D6174B299A005D0784 /* MtLoginViewController.xib in Resources */,
+				E8C81F7D174C27CE00ADDDBC /* RatingViewController.xib in Resources */,
+				E8C81F82174C34B300ADDDBC /* PostSelectionViewController.xib in Resources */,
+				E8C81F95174C37D200ADDDBC /* WebPostViewController.xib in Resources */,
+				E8C81F9D174C480900ADDDBC /* JournalPostViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8430581174A7E47005D0784 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8430590174A7E47005D0784 /* InfoPlist.strings in Resources */,
+				E84305D7174B299A005D0784 /* MtLoginViewController.xib in Resources */,
+				E8C81F96174C37D200ADDDBC /* WebPostViewController.xib in Resources */,
+				E8C81F9E174C480900ADDDBC /* JournalPostViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E8430582174A7E47005D0784 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8430554174A7E47005D0784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8430568174A7E47005D0784 /* main.m in Sources */,
+				E843056C174A7E47005D0784 /* AppDelegate.m in Sources */,
+				E8430575174A7E47005D0784 /* MasterViewController.m in Sources */,
+				E8430578174A7E47005D0784 /* MyProfileViewController.m in Sources */,
+				E84305B6174A7FDD005D0784 /* Mentillect.m in Sources */,
+				E84305D4174B299A005D0784 /* MtLoginViewController.m in Sources */,
+				E84305DB174B2BBC005D0784 /* MtUser.m in Sources */,
+				E84305DF174B2BCC005D0784 /* Post.m in Sources */,
+				E84305E3174B2BD8005D0784 /* Rating.m in Sources */,
+				E84305E7174B2BE7005D0784 /* Activity.m in Sources */,
+				E84305EB174B2F8A005D0784 /* Comment.m in Sources */,
+				E8C81F7C174C27CE00ADDDBC /* RatingViewController.m in Sources */,
+				E8C81F81174C34B300ADDDBC /* PostSelectionViewController.m in Sources */,
+				E8C81F88174C363800ADDDBC /* HTMLNode.m in Sources */,
+				E8C81F8A174C363800ADDDBC /* HTMLParser.m in Sources */,
+				E8C81F93174C37D200ADDDBC /* WebPostViewController.m in Sources */,
+				E8C81F9B174C480900ADDDBC /* JournalPostViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E843057F174A7E47005D0784 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8430593174A7E47005D0784 /* MentillectTests.m in Sources */,
+				E84305D5174B299A005D0784 /* MtLoginViewController.m in Sources */,
+				E84305DC174B2BBC005D0784 /* MtUser.m in Sources */,
+				E84305E0174B2BCC005D0784 /* Post.m in Sources */,
+				E84305E4174B2BD8005D0784 /* Rating.m in Sources */,
+				E84305E8174B2BE7005D0784 /* Activity.m in Sources */,
+				E84305EC174B2F8A005D0784 /* Comment.m in Sources */,
+				E8C81F89174C363800ADDDBC /* HTMLNode.m in Sources */,
+				E8C81F8B174C363800ADDDBC /* HTMLParser.m in Sources */,
+				E8C81F94174C37D200ADDDBC /* WebPostViewController.m in Sources */,
+				E8C81F9C174C480900ADDDBC /* JournalPostViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E843058A174A7E47005D0784 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8430557174A7E47005D0784 /* Mentillect */;
+			targetProxy = E8430589174A7E47005D0784 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8430564174A7E47005D0784 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8430565174A7E47005D0784 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E8430579174A7E47005D0784 /* MasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E843057A174A7E47005D0784 /* en */,
+			);
+			name = MasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		E843057C174A7E47005D0784 /* MyProfileViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E843057D174A7E47005D0784 /* en */,
+			);
+			name = MyProfileViewController.xib;
+			sourceTree = "<group>";
+		};
+		E843058E174A7E47005D0784 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E843058F174A7E47005D0784 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8430594174A7E47005D0784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E8430595174A7E47005D0784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8430597174A7E47005D0784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mentillect/Mentillect-Prefix.pch";
+				INFOPLIST_FILE = "Mentillect/Mentillect-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E8430598174A7E47005D0784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mentillect/Mentillect-Prefix.pch";
+				INFOPLIST_FILE = "Mentillect/Mentillect-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E843059A174A7E47005D0784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mentillect.app/Mentillect";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mentillect/Mentillect-Prefix.pch";
+				INFOPLIST_FILE = "MentillectTests/MentillectTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E843059B174A7E47005D0784 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mentillect.app/Mentillect";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mentillect/Mentillect-Prefix.pch";
+				INFOPLIST_FILE = "MentillectTests/MentillectTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8430553174A7E47005D0784 /* Build configuration list for PBXProject "Mentillect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8430594174A7E47005D0784 /* Debug */,
+				E8430595174A7E47005D0784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8430596174A7E47005D0784 /* Build configuration list for PBXNativeTarget "Mentillect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8430597174A7E47005D0784 /* Debug */,
+				E8430598174A7E47005D0784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8430599174A7E47005D0784 /* Build configuration list for PBXNativeTarget "MentillectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E843059A174A7E47005D0784 /* Debug */,
+				E843059B174A7E47005D0784 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8430550174A7E47005D0784 /* Project object */;
+}
