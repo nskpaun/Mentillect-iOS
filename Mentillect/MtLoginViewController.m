@@ -55,9 +55,17 @@
 
 - (IBAction)signin:(id)sender {
     if ( name.text && email.text && password.text && description.text && location.text && goal.text && selectedImage ) {
-        MtUser *user1 = [MtUser createWithName:name.text withEmail:email.text withPassword:password.text withDescription:description.text withLocation:location.text withGoal:goal.text withImage:selectedImage];
-        [user1 mtSave];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        dispatch_queue_t queue = dispatch_queue_create("com.mentillect.nkspaun", NULL);
+        dispatch_async(queue, ^{
+            MtUser *user1 = [MtUser createWithName:name.text withEmail:email.text withPassword:password.text withDescription:description.text withLocation:location.text withGoal:goal.text withImage:selectedImage];
+            [user1 mtSave];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self dismissViewControllerAnimated:YES completion:nil];
+            });
+        });
+
+
+        
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sign Up"
                                                         message:@"You must enter all information"

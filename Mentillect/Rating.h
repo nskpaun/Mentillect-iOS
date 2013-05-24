@@ -21,6 +21,8 @@
                       withUser:(MtUser*)user
                     withNumber:(NSNumber*)number;
 +(NSArray*)getRatingsForUser:(MtUser*)user withGoal:(NSString*)goal;
++(NSArray*)recentRatings;
+
 -(BOOL)ratingSave;
 -(BOOL)update;
 -(BOOL)destroy;

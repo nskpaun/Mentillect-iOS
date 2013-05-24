@@ -65,8 +65,19 @@ const NSString* ratingKey = @"Rating";
 
 -(BOOL)update
 {
-    //[[self pfSerialize] save];
-    return NO;
+    [self._user setEmail:email];
+
+    [self._user setUsername:name];
+    [self._user setObject:description forKey:descKey];
+    [self._user setObject:location forKey:locationKey];
+    [self._user setObject:goal forKey:goalKey];
+    [self._user setObject:comebacks forKey:comebacksKey];
+    [self._user setObject:rating forKey:ratingKey];
+    NSData *data = UIImagePNGRepresentation(picture);
+    PFFile *imageFile = [PFFile fileWithName:@"image.png" data:data];
+    [self._user setObject:imageFile forKey:pictureKey];
+    
+    return [self._user save];
 }
 
 -(BOOL)destroy

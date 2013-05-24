@@ -47,10 +47,17 @@
 }
 - (IBAction)submitRating:(id)sender {
     int val = score.value;
-    
-    Rating *rating = [Rating createRatingWithGoal:user.goal withUser:user withNumber: [NSNumber numberWithInt:val]];
-    [rating ratingSave];
-    [MentillectAppDelegate.navController popViewControllerAnimated:YES];
+    dispatch_queue_t queue = dispatch_queue_create("com.mentillect.nkspaun", NULL);
+    dispatch_async(queue, ^{
+        Rating *rating = [Rating createRatingWithGoal:user.goal withUser:user withNumber: [NSNumber numberWithInt:val]];
+        [rating ratingSave];
+        dispatch_async(dispatch_get_main_queue(), ^{
+                [MentillectAppDelegate.navController popViewControllerAnimated:YES];
+        });
+    });
+
+
+
 }
 
 @end

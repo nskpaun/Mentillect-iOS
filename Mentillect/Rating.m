@@ -37,6 +37,9 @@ const NSString* numberKey = @"Number";
 +(NSArray*)getRatingsForUser:(MtUser*)user withGoal:(NSString*)goal
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
+    [query whereKey:userKey equalTo:user._user];
+    [query orderByAscending:@"createdAt"];
+    [query setLimit:100];
     NSMutableArray *array = [[NSMutableArray alloc] init];
     for (PFObject *obj in [query findObjects])
     {
@@ -44,8 +47,35 @@ const NSString* numberKey = @"Number";
     }
     return array;
 }
+
+-(Rating*)getLast
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
+    [query whereKey:userKey equalTo:user._user];
+    [query orderByDescending:@"createdAt"];
+    [query setLimit:1];
+    for (PFObject *obj in [query findObjects])
+    {
+        return [Rating pfDeserialize:obj];
+    }
+    return nil;
+}
+
 -(BOOL)ratingSave{
     PFObject *obj = [self pfSerialize];
+    
+    if ( number.integerValue > 50 ) {
+        user.rating= [NSNumber numberWithInt:user.rating.integerValue + 1];
+        Rating *prev = [self getLast];
+        if (prev) {
+            if ( prev.number.integerValue < 50 ) {
+                user.comebacks = [NSNumber numberWithInt:user.comebacks.integerValue+1 ];
+                
+            }
+        }
+        [user update];
+    }
+    
     return [obj save];
 
 }
@@ -73,6 +103,21 @@ const NSString* numberKey = @"Number";
     mtRating.created = [rating objectForKey:dateKey];
     
     return mtRating;
+}
+
++(NSArray*)recentRatings {
+    PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
+    [query setLimit:50];
+    [query orderByDescending:@"createdAt"];
+    
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    
+    for (PFObject *obj in [query findObjects]) {
+        [array addObject:[Rating pfDeserialize:obj]];
+    }
+    
+    return array;
 }
 
 -(BOOL)update

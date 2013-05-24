@@ -11,13 +11,25 @@
 #import "ActivityTableviewDelegate.h"
 #import "StoryTableViewDelegate.h"
 #import "HorizontalTableView.h"
+#import "LineChartDatasource.h"
+#import "PieChartDataSource.h"
+#import <CorePlot-CocoaTouch.h>
 
 @interface MyProfileViewController : UIViewController <UISplitViewControllerDelegate> {
     MtUser *user;
+    
     ActivityTableviewDelegate *activityTableDelegate;
     StoryTableViewDelegate *storyTableDelegate;
+    LineChartDatasource *lineChartDatasource;
+    PieChartDataSource *pieChartDatasource;
+    
+    
     IBOutlet UITableView *activityTable;
     IBOutlet HorizontalTableView *storiesTable;
+    IBOutlet CPTGraphHostingView *lineGraphHost;
+    IBOutlet CPTGraphHostingView *pieGraphHost;
+    
+    CPTXYGraph *graph;
 }
 
 @property (strong, nonatomic) id detailItem;

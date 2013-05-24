@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ActivityTableviewDelegate : NSObject <UITableViewDelegate,UITableViewDataSource> {
+@interface ActivityTableviewDelegate : NSObject <UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate> {
     NSArray* _activities;
+    UITextField *textField;
 }
 
 -(id)initWithActivities:(NSArray*)activities;

@@ -69,6 +69,15 @@
 		E8B30717174D475A003248EA /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B30715174D475A003248EA /* StoryCell.m */; };
 		E8B30719174D477D003248EA /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B30718174D477D003248EA /* StoryCell.xib */; };
 		E8B3071A174D477D003248EA /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B30718174D477D003248EA /* StoryCell.xib */; };
+		E8B30736174D53A3003248EA /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30733174D5337003248EA /* libCorePlot-CocoaTouch.a */; };
+		E8B30739174E62CB003248EA /* LineChartDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B30738174E62CB003248EA /* LineChartDatasource.m */; };
+		E8B3073C174E6307003248EA /* PieChartDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B3073B174E6307003248EA /* PieChartDataSource.m */; };
+		E8B3073E174E6C72003248EA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B3073D174E6C72003248EA /* FacebookSDK.framework */; };
+		E8B30740174E6CC3003248EA /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8B3073F174E6CC3003248EA /* FacebookSDKResources.bundle */; };
+		E8B30742174E6CE6003248EA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30741174E6CE5003248EA /* AdSupport.framework */; };
+		E8B30744174E6CED003248EA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30743174E6CED003248EA /* Accounts.framework */; };
+		E8B30746174E6CF6003248EA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30745174E6CF6003248EA /* libsqlite3.dylib */; };
+		E8B30748174E6D09003248EA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30747174E6D09003248EA /* Social.framework */; };
 		E8C81F7C174C27CE00ADDDBC /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F7A174C27CE00ADDDBC /* RatingViewController.m */; };
 		E8C81F7D174C27CE00ADDDBC /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F7B174C27CE00ADDDBC /* RatingViewController.xib */; };
 		E8C81F81174C34B300ADDDBC /* PostSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F7F174C34B300ADDDBC /* PostSelectionViewController.m */; };
@@ -96,6 +105,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = E8430557174A7E47005D0784;
 			remoteInfo = Mentillect;
+		};
+		E8B30732174D5337003248EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8B3072C174D5337003248EA /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		E8B30734174D535A003248EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8B3072C174D5337003248EA /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -165,6 +188,17 @@
 		E8B30714174D475A003248EA /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
 		E8B30715174D475A003248EA /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		E8B30718174D477D003248EA /* StoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
+		E8B3072C174D5337003248EA /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../../../Downloads/CorePlot_1.2/Source/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+		E8B30737174E62CB003248EA /* LineChartDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartDatasource.h; sourceTree = "<group>"; };
+		E8B30738174E62CB003248EA /* LineChartDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartDatasource.m; sourceTree = "<group>"; };
+		E8B3073A174E6307003248EA /* PieChartDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDataSource.h; sourceTree = "<group>"; };
+		E8B3073B174E6307003248EA /* PieChartDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartDataSource.m; sourceTree = "<group>"; };
+		E8B3073D174E6C72003248EA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		E8B3073F174E6CC3003248EA /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		E8B30741174E6CE5003248EA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		E8B30743174E6CED003248EA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		E8B30745174E6CF6003248EA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		E8B30747174E6D09003248EA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E8C81F79174C27CD00ADDDBC /* RatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewController.h; sourceTree = "<group>"; };
 		E8C81F7A174C27CE00ADDDBC /* RatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewController.m; sourceTree = "<group>"; };
 		E8C81F7B174C27CE00ADDDBC /* RatingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
@@ -190,11 +224,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8B30748174E6D09003248EA /* Social.framework in Frameworks */,
+				E84305C7174A8750005D0784 /* Security.framework in Frameworks */,
+				E8B30746174E6CF6003248EA /* libsqlite3.dylib in Frameworks */,
+				E8B30744174E6CED003248EA /* Accounts.framework in Frameworks */,
+				E8B30742174E6CE6003248EA /* AdSupport.framework in Frameworks */,
 				E8C81F8F174C369800ADDDBC /* libxml2.2.dylib in Frameworks */,
 				E8C81F8D174C366900ADDDBC /* libxml2.dylib in Frameworks */,
+				E8B30736174D53A3003248EA /* libCorePlot-CocoaTouch.a in Frameworks */,
 				E84305CB174A8760005D0784 /* SystemConfiguration.framework in Frameworks */,
 				E84305C9174A8758005D0784 /* StoreKit.framework in Frameworks */,
-				E84305C7174A8750005D0784 /* Security.framework in Frameworks */,
 				E84305C5174A874B005D0784 /* QuartzCore.framework in Frameworks */,
 				E84305C3174A8744005D0784 /* MobileCoreServices.framework in Frameworks */,
 				E84305C1174A873E005D0784 /* libz.1.1.3.dylib in Frameworks */,
@@ -205,6 +244,7 @@
 				E843055C174A7E47005D0784 /* UIKit.framework in Frameworks */,
 				E843055E174A7E47005D0784 /* Foundation.framework in Frameworks */,
 				E84305B8174A86DE005D0784 /* Parse.framework in Frameworks */,
+				E8B3073E174E6C72003248EA /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +265,11 @@
 		E843054F174A7E47005D0784 = {
 			isa = PBXGroup;
 			children = (
+				E8B30747174E6D09003248EA /* Social.framework */,
+				E8B30745174E6CF6003248EA /* libsqlite3.dylib */,
+				E8B30743174E6CED003248EA /* Accounts.framework */,
+				E8B30741174E6CE5003248EA /* AdSupport.framework */,
+				E8B3072C174D5337003248EA /* CorePlot-CocoaTouch.xcodeproj */,
 				E8C81F8E174C369800ADDDBC /* libxml2.2.dylib */,
 				E8C81F8C174C366900ADDDBC /* libxml2.dylib */,
 				E84305CA174A8760005D0784 /* SystemConfiguration.framework */,
@@ -255,6 +300,8 @@
 		E843055A174A7E47005D0784 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8B3073F174E6CC3003248EA /* FacebookSDKResources.bundle */,
+				E8B3073D174E6C72003248EA /* FacebookSDK.framework */,
 				E84305B7174A86DE005D0784 /* Parse.framework */,
 				E843055B174A7E47005D0784 /* UIKit.framework */,
 				E843055D174A7E47005D0784 /* Foundation.framework */,
@@ -366,8 +413,20 @@
 				E8B3070D174D3855003248EA /* ActivityTableviewDelegate.m */,
 				E8B30710174D4745003248EA /* StoryTableViewDelegate.h */,
 				E8B30711174D4745003248EA /* StoryTableViewDelegate.m */,
+				E8B30737174E62CB003248EA /* LineChartDatasource.h */,
+				E8B30738174E62CB003248EA /* LineChartDatasource.m */,
+				E8B3073A174E6307003248EA /* PieChartDataSource.h */,
+				E8B3073B174E6307003248EA /* PieChartDataSource.m */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		E8B3072D174D5337003248EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8B30733174D5337003248EA /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E8C81F83174C362400ADDDBC /* OutsideProjects */ = {
@@ -413,6 +472,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E8B30735174D535A003248EA /* PBXTargetDependency */,
 			);
 			name = Mentillect;
 			productName = Mentillect;
@@ -457,6 +517,12 @@
 			mainGroup = E843054F174A7E47005D0784;
 			productRefGroup = E8430559174A7E47005D0784 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E8B3072D174D5337003248EA /* Products */;
+					ProjectRef = E8B3072C174D5337003248EA /* CorePlot-CocoaTouch.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E8430557174A7E47005D0784 /* Mentillect */,
@@ -464,6 +530,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E8B30733174D5337003248EA /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = E8B30732174D5337003248EA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E8430556174A7E47005D0784 /* Resources */ = {
@@ -484,6 +560,7 @@
 				E8B30700174D2D3B003248EA /* PageLoopViewController.xib in Resources */,
 				E8B30709174D327D003248EA /* ActivityCell.xib in Resources */,
 				E8B30719174D477D003248EA /* StoryCell.xib in Resources */,
+				E8B30740174E6CC3003248EA /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +624,8 @@
 				E8B3070E174D3855003248EA /* ActivityTableviewDelegate.m in Sources */,
 				E8B30712174D4745003248EA /* StoryTableViewDelegate.m in Sources */,
 				E8B30716174D475A003248EA /* StoryCell.m in Sources */,
+				E8B30739174E62CB003248EA /* LineChartDatasource.m in Sources */,
+				E8B3073C174E6307003248EA /* PieChartDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +660,11 @@
 			isa = PBXTargetDependency;
 			target = E8430557174A7E47005D0784 /* Mentillect */;
 			targetProxy = E8430589174A7E47005D0784 /* PBXContainerItemProxy */;
+		};
+		E8B30735174D535A003248EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CorePlot-CocoaTouch";
+			targetProxy = E8B30734174D535A003248EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -686,14 +770,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mentillect/Mentillect-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					"/Users/nkspaun/Downloads/CorePlot_1.2/Source/framework/**",
+				);
 				INFOPLIST_FILE = "Mentillect/Mentillect-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -705,14 +795,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mentillect/Mentillect-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					"/Users/nkspaun/Downloads/CorePlot_1.2/Source/framework/**",
+				);
 				INFOPLIST_FILE = "Mentillect/Mentillect-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

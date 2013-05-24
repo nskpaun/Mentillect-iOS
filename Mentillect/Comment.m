@@ -101,8 +101,9 @@ const NSString* cForKey = @"ForPost";
     user = [comm objectForKey:cToKey];
     [user fetchIfNeeded];
     c.toUser = [MtUser pfDeserialize:user];
+    
     PFObject *post = [comm objectForKey:cForKey];
-    c.forPost = [Post getPostById:post.objectId];
+    if (post) c.forPost = [Post getPostById:post.objectId];
     
     c.object = comm;
     
