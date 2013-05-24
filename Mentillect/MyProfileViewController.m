@@ -64,7 +64,7 @@
     } else {
         UIActivityIndicatorView *activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         
-        activityView.center=self.view.center;
+        activityView.frame = CGRectMake(200, 200, 300, 300);
         
         [activityView startAnimating];
         
@@ -80,20 +80,28 @@
         dispatch_queue_t queue = dispatch_queue_create("com.mentillect.nkspaun", NULL);
         dispatch_async(queue, ^{
             activityTableDelegate = [[ActivityTableviewDelegate alloc] initWithActivities:[Activity getLatestActivities]];
-            [activityTable setDataSource:activityTableDelegate];
-            [activityTable setDelegate:activityTableDelegate];
-            [activityTable reloadData];
-            
-            storyTableDelegate = [[StoryTableViewDelegate alloc] initWithStories:[Post getRecentPosts]];
-            [storiesTable setDelegate:storyTableDelegate];
-            [storiesTable refreshData];
-            
-            [self setUpLineGraph];
-            [self setUpPieChart];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [activityView removeFromSuperview];
+                [activityTable setDataSource:activityTableDelegate];
+                [activityTable setDelegate:activityTableDelegate];
+                [activityTable reloadData];
             });
         });
+        dispatch_queue_t queue1 = dispatch_queue_create("com.mentillect.nkspaun1", NULL);
+        dispatch_async(queue1, ^{
+            storyTableDelegate = [[StoryTableViewDelegate alloc] initWithStories:[Post getRecentPosts]];
+ 
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [storiesTable setDelegate:storyTableDelegate];
+                [storiesTable refreshData];
+            });
+        });
+
+            [self setUpLineGraph];
+            
+
+
+        
+        [self setUpPieChart];
     
     }
     
@@ -146,42 +154,48 @@
 
 -(void)setUpLineGraph
 {
-    lineChartDatasource = [[LineChartDatasource alloc] initWithRatings:[Rating getRatingsForUser:user withGoal:user.goal]];
-    graph = [[CPTXYGraph alloc] initWithFrame: lineGraphHost.bounds];
-    
-    lineGraphHost.hostedGraph = graph;
-    
-    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)graph.defaultPlotSpace;
-    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
-                                                    length:CPTDecimalFromFloat(30)];
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
-                                                    length:CPTDecimalFromFloat(100)];
-    
-    
-    
-    CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
-    textStyle.color = [CPTColor grayColor];
-    textStyle.fontName = @"Helvetica-Bold";
-    textStyle.fontSize = 16.0f;
-    
-    graph.title = @"";
-    graph.titleTextStyle = textStyle;
-    graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
-    graph.titleDisplacement = CGPointMake(0.0f, -12.0f);
-    
-    CPTScatterPlot *lineScatterPlot = [[CPTScatterPlot alloc] initWithFrame:lineGraphHost.bounds];
-    lineScatterPlot.dataSource = lineChartDatasource;
-    [lineScatterPlot reloadData];
-    [graph addPlot:lineScatterPlot];
-    
-    for ( CPTAxis *axis in graph.axisSet.axes ) {
-        BOOL hidden = YES;
+    dispatch_queue_t queue2 = dispatch_queue_create("com.mentillect.nkspaun2", NULL);
+    dispatch_async(queue2, ^{
         
-        axis.hidden = hidden;
-        for (CPTAxisLabel *axisLabel in axis.axisLabels) {
-            axisLabel.contentLayer.hidden = hidden;
-        }
-    }
+        lineChartDatasource = [[LineChartDatasource alloc] initWithRatings:[Rating getRatingsForUser:user withGoal:user.goal]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            graph = [[CPTXYGraph alloc] initWithFrame: lineGraphHost.bounds];
+            
+            lineGraphHost.hostedGraph = graph;
+            
+            CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)graph.defaultPlotSpace;
+            plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                            length:CPTDecimalFromFloat(30)];
+            plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                            length:CPTDecimalFromFloat(100)];
+            
+            
+            
+            CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
+            textStyle.color = [CPTColor grayColor];
+            textStyle.fontName = @"Helvetica-Bold";
+            textStyle.fontSize = 16.0f;
+            
+            graph.title = @"";
+            graph.titleTextStyle = textStyle;
+            graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
+            graph.titleDisplacement = CGPointMake(0.0f, -12.0f);
+            
+            CPTScatterPlot *lineScatterPlot = [[CPTScatterPlot alloc] initWithFrame:lineGraphHost.bounds];
+            lineScatterPlot.dataSource = lineChartDatasource;
+            [lineScatterPlot reloadData];
+            [graph addPlot:lineScatterPlot];
+            
+            for ( CPTAxis *axis in graph.axisSet.axes ) {
+                BOOL hidden = YES;
+                
+                axis.hidden = hidden;
+                for (CPTAxisLabel *axisLabel in axis.axisLabels) {
+                    axisLabel.contentLayer.hidden = hidden;
+                }
+            }
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning

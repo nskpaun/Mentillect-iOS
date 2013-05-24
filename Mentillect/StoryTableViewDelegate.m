@@ -10,6 +10,8 @@
 #import "HorizontalTableView.h"
 #import "StoryCell.h"
 #import "Post.h"
+#import "ReadPostViewController.h"
+#import "Mentillect.h"
 
 @implementation StoryTableViewDelegate
 
@@ -40,6 +42,7 @@
         if([currentObject isKindOfClass:[StoryCell class]])
         {
             cell = (StoryCell *)currentObject;
+            [cell.readButton addTarget:self action:@selector(openPost:) forControlEvents:UIControlEventTouchUpInside];
             break;
         }
     }
@@ -47,8 +50,19 @@
     [cell.imageLabel setImage: post.picture];
     [cell.userImageLabel setImage: post.poster.picture];
     [cell.titleLabel setText:post.title];
+    [cell.readButton setTag:index];
     
 	return cell;
+}
+
+- (void)openPost:(id)sender {
+    UIButton *cellButton = sender;
+    Post *p = [_stories objectAtIndex: cellButton.tag];
+    
+    ReadPostViewController *rpvc = [[ReadPostViewController alloc] initWithPost:p];
+    [MentillectAppDelegate.navController pushViewController:rpvc animated:YES];
+    
+    
 }
 
 - (CGFloat)columnWidthForTableView:(HorizontalTableView *)tableView {

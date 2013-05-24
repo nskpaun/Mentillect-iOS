@@ -78,6 +78,8 @@
 		E8B30744174E6CED003248EA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30743174E6CED003248EA /* Accounts.framework */; };
 		E8B30746174E6CF6003248EA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30745174E6CF6003248EA /* libsqlite3.dylib */; };
 		E8B30748174E6D09003248EA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30747174E6D09003248EA /* Social.framework */; };
+		E8B8C52C174FBE5F00517D3A /* ReadPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B8C52A174FBE5F00517D3A /* ReadPostViewController.m */; };
+		E8B8C52D174FBE5F00517D3A /* ReadPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B8C52B174FBE5F00517D3A /* ReadPostViewController.xib */; };
 		E8C81F7C174C27CE00ADDDBC /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F7A174C27CE00ADDDBC /* RatingViewController.m */; };
 		E8C81F7D174C27CE00ADDDBC /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F7B174C27CE00ADDDBC /* RatingViewController.xib */; };
 		E8C81F81174C34B300ADDDBC /* PostSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F7F174C34B300ADDDBC /* PostSelectionViewController.m */; };
@@ -199,6 +201,9 @@
 		E8B30743174E6CED003248EA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E8B30745174E6CF6003248EA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E8B30747174E6D09003248EA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		E8B8C529174FBE5F00517D3A /* ReadPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadPostViewController.h; sourceTree = "<group>"; };
+		E8B8C52A174FBE5F00517D3A /* ReadPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadPostViewController.m; sourceTree = "<group>"; };
+		E8B8C52B174FBE5F00517D3A /* ReadPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadPostViewController.xib; sourceTree = "<group>"; };
 		E8C81F79174C27CD00ADDDBC /* RatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewController.h; sourceTree = "<group>"; };
 		E8C81F7A174C27CE00ADDDBC /* RatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewController.m; sourceTree = "<group>"; };
 		E8C81F7B174C27CE00ADDDBC /* RatingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
@@ -385,6 +390,9 @@
 				E8C81F98174C480900ADDDBC /* JournalPostViewController.h */,
 				E8C81F99174C480900ADDDBC /* JournalPostViewController.m */,
 				E8C81F9A174C480900ADDDBC /* JournalPostViewController.xib */,
+				E8B8C529174FBE5F00517D3A /* ReadPostViewController.h */,
+				E8B8C52A174FBE5F00517D3A /* ReadPostViewController.m */,
+				E8B8C52B174FBE5F00517D3A /* ReadPostViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -561,6 +569,7 @@
 				E8B30709174D327D003248EA /* ActivityCell.xib in Resources */,
 				E8B30719174D477D003248EA /* StoryCell.xib in Resources */,
 				E8B30740174E6CC3003248EA /* FacebookSDKResources.bundle in Resources */,
+				E8B8C52D174FBE5F00517D3A /* ReadPostViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +635,7 @@
 				E8B30716174D475A003248EA /* StoryCell.m in Sources */,
 				E8B30739174E62CB003248EA /* LineChartDatasource.m in Sources */,
 				E8B3073C174E6307003248EA /* PieChartDataSource.m in Sources */,
+				E8B8C52C174FBE5F00517D3A /* ReadPostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

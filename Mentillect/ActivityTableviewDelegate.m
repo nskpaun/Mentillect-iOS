@@ -34,7 +34,7 @@
     textField.borderStyle = UITextBorderStyleLine;
     textField.frame = CGRectMake(15, 75, 255, 30);
     textField.font = [UIFont fontWithName:@"ArialMT" size:20];
-    textField.placeholder = @"Preset Name";
+    textField.placeholder = @"Comment";
     textField.textAlignment = UITextAlignmentCenter;
     textField.keyboardAppearance = UIKeyboardAppearanceAlert;
     [textField becomeFirstResponder];
@@ -52,6 +52,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ActivityCell";
+
     ActivityCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     Activity *activity = [_activities objectAtIndex:indexPath.row];
@@ -73,6 +74,8 @@
     [cell.userName setText:activity.user.name];
     [cell.commentText setText:activity.text];
     [cell.activityInfo setText:activity.activityInfo];
+    
+    
     
     return cell;
 }

@@ -268,11 +268,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mentillect/MyProfileViewController.m"
-         timestampString = "391046237.687764"
+         timestampString = "391105648.912287"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "214"
-         endingLineNumber = "214"
+         startingLineNumber = "228"
+         endingLineNumber = "228"
          landmarkName = "-splitViewController:willShowViewController:invalidatingBarButtonItem:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -281,11 +281,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Mentillect/MyProfileViewController.m"
-         timestampString = "391046237.687764"
+         timestampString = "391105648.912287"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "107"
-         endingLineNumber = "107"
+         startingLineNumber = "115"
+         endingLineNumber = "115"
          landmarkName = "-setUpPieChart"
          landmarkType = "5">
       </FileBreakpoint>
@@ -313,6 +313,32 @@
          startingLineNumber = "65"
          endingLineNumber = "65"
          landmarkName = "-ratingSave"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Mentillect/ReadPostViewController.m"
+         timestampString = "391105261.125948"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "98"
+         endingLineNumber = "98"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Mentillect/ReadPostViewController.m"
+         timestampString = "391105261.125948"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
+         landmarkName = "-newComment:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

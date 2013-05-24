@@ -37,7 +37,7 @@ const NSString* cForKey = @"ForPost";
 +(NSArray*)commentsForPost:(Post*)post
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
-    [query whereKey:cForKey equalTo:post.object.objectId];
+    [query whereKey:cForKey equalTo:post.object];
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     

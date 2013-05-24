@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *imageLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *userImageLabel;
+@property (strong, nonatomic) IBOutlet UIButton *readButton;
 
 
 
