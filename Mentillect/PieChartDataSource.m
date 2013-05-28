@@ -7,6 +7,8 @@
 //
 
 #import "PieChartDataSource.h"
+#import <CorePlot-CocoaTouch.h>
+#import "Mentillect.h"
 
 @implementation PieChartDataSource
 
@@ -42,6 +44,17 @@ self = [super init];
 
 -(NSString *)legendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)index {
     return @"";
+}
+
+-(CPTFill *)sliceFillForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)index {
+    CPTColor *color;
+    if (index == 1) {
+        color = [CPTColor colorWithCGColor:mentMediumGray.CGColor];
+    } else {
+       color = [CPTColor colorWithCGColor:mentLightGreen.CGColor];
+    }
+    return [CPTFill fillWithColor: color];
+    
 }
 
 @end

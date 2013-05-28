@@ -12,6 +12,7 @@
 #import "Activity.h"
 #import "Post.h"
 #import "Rating.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MyProfileViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -49,26 +50,59 @@
 {
     [super viewDidLoad];
 
+    [activityContainer.layer setBorderColor:mentDarkGray.CGColor];
+    [activityContainer.layer setBorderWidth:1];
+    [graphContainer.layer setBorderColor:mentDarkGray.CGColor];
+    [graphContainer.layer setBorderWidth:1];
+    [storyContainer.layer setBorderColor:mentDarkGray.CGColor];
+    [storyContainer.layer setBorderWidth:1];
+    
+
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-
     [super viewDidAppear:animated];
+    
     user = [MtUser getCurrentUser];
     if (!user) {
         MtLoginViewController *livc = [[MtLoginViewController alloc] initWithNibName:@"MtLoginViewController" bundle:nil];
         [MentillectAppDelegate.navController pushViewController:livc animated:YES];
     } else {
+        [profileImage setImage:user.picture];
+        [profileImage.layer setCornerRadius:profileImage.frame.size.height/2];
+        profileImage.clipsToBounds = YES;
+        [userName setText:user.name];
+        [userScore setText:[NSString stringWithFormat:@"%d", user.rating.integerValue]];
+        [userComebacks setText:[NSString stringWithFormat:@"%d", user.comebacks.integerValue]];
+
+        [userDesc setText:user.description];
+        [userLocation setText:user.location];
         UIActivityIndicatorView *activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         
-        activityView.frame = CGRectMake(200, 200, 300, 300);
+        activityView.frame = CGRectMake(200, 200, 300, 200);
+        [activityView setBackgroundColor:[UIColor blackColor]];
+        [activityView setAlpha:0.5f];
+        
         
         [activityView startAnimating];
         
         [self.view addSubview:activityView];
+        
+        UIActivityIndicatorView *activityView1=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        
+        activityView1.frame = CGRectMake(200, 500, 300, 100);
+        [activityView1 setBackgroundColor:[UIColor blackColor]];
+        [activityView1 setAlpha:0.5f];
+        
+        
+        [activityView1 startAnimating];
+        
+        [self.view addSubview:activityView1];
+        
+
         
 //        dispatch_queue_t queue = dispatch_queue_create("com.mentillect.nkspaun", NULL);
 //        dispatch_async(queue, ^{
@@ -84,6 +118,7 @@
                 [activityTable setDataSource:activityTableDelegate];
                 [activityTable setDelegate:activityTableDelegate];
                 [activityTable reloadData];
+                [activityView removeFromSuperview];
             });
         });
         dispatch_queue_t queue1 = dispatch_queue_create("com.mentillect.nkspaun1", NULL);
@@ -91,12 +126,15 @@
             storyTableDelegate = [[StoryTableViewDelegate alloc] initWithStories:[Post getRecentPosts]];
  
             dispatch_async(dispatch_get_main_queue(), ^{
+
                 [storiesTable setDelegate:storyTableDelegate];
                 [storiesTable refreshData];
+                [storiesTable setBackgroundColor:[UIColor clearColor]];
+                [activityView1 removeFromSuperview];
             });
         });
 
-            [self setUpLineGraph];
+        [self setUpLineGraph];
             
 
 
@@ -110,10 +148,11 @@
 
 -(void)setUpPieChart
 {
-    pieChartDatasource = [[PieChartDataSource alloc] initWithCurrent:15 withMax:20];
+    pieChartDatasource = [[PieChartDataSource alloc] initWithCurrent:user.rating.integerValue withMax:20];
     
     CPTGraph *graph1 = [[CPTXYGraph alloc] initWithFrame:pieGraphHost.bounds];
     pieGraphHost.hostedGraph = graph1;
+
     graph1.paddingLeft = 0.0f;
     graph1.paddingTop = 0.0f;
     graph1.paddingRight = 0.0f;
@@ -125,47 +164,56 @@
     textStyle.fontName = @"Helvetica-Bold";
     textStyle.fontSize = 16.0f;
     // 3 - Configure title
-    NSString *title = @"Portfolio Prices: May 1, 2012";
-    graph1.title = title;
-    graph1.titleTextStyle = textStyle;
-    graph1.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
-    graph1.titleDisplacement = CGPointMake(0.0f, -12.0f);
+
     // 4 - Set theme
 
-    [graph1 applyTheme:[CPTTheme themeNamed:kCPTPlainWhiteTheme]];
+
 
     // 2 - Create chart
     CPTPieChart *pieChart = [[CPTPieChart alloc] init];
     pieChart.dataSource = pieChartDatasource;
-    pieChart.pieRadius = (pieGraphHost.bounds.size.height * 0.7) / 2;
+    pieChart.pieRadius = (pieGraphHost.bounds.size.height * 1.00) / 2;
 
-    pieChart.startAngle = M_PI_4;
-    pieChart.sliceDirection = CPTPieDirectionClockwise;
+    pieChart.startAngle = 0;
+    pieChart.sliceDirection = CPTPieDirectionCounterClockwise;
     // 3 - Create gradient
-    CPTGradient *overlayGradient = [[CPTGradient alloc] init];
-    overlayGradient.gradientType = CPTGradientTypeRadial;
-    overlayGradient = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:0.0] atPosition:0.9];
-    overlayGradient = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:0.4] atPosition:1.0];
-    pieChart.overlayFill = [CPTFill fillWithGradient:overlayGradient];
+
     // 4 - Add chart to graph    
     [graph1 addPlot:pieChart];
+    [pieGraphHost setBackgroundColor:[UIColor clearColor]];
+        [graph setBackgroundColor:[UIColor clearColor].CGColor];
     
 }
 
 -(void)setUpLineGraph
 {
+    UIActivityIndicatorView *activityView2=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    
+    activityView2.frame = CGRectMake(500, 200, 300, 200);
+    [activityView2 setBackgroundColor:[UIColor blackColor]];
+    [activityView2 setAlpha:0.5f];
+    
+    
+    [activityView2 startAnimating];
+    
+    [self.view addSubview:activityView2];
+    
     dispatch_queue_t queue2 = dispatch_queue_create("com.mentillect.nkspaun2", NULL);
     dispatch_async(queue2, ^{
-        
-        lineChartDatasource = [[LineChartDatasource alloc] initWithRatings:[Rating getRatingsForUser:user withGoal:user.goal]];
+        NSArray * ratings = [Rating getRatingsForUser:user withGoal:user.goal];
+        lineChartDatasource = [[LineChartDatasource alloc] initWithRatings: ratings];
         dispatch_async(dispatch_get_main_queue(), ^{
             graph = [[CPTXYGraph alloc] initWithFrame: lineGraphHost.bounds];
+            [graph setBackgroundColor:mentMediumGray.CGColor];
             
             lineGraphHost.hostedGraph = graph;
             
+            [lineGraphHost.layer setBorderColor:mentDarkGray.CGColor];
+            [lineGraphHost.layer setBorderWidth:1.0f];
+            
             CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)graph.defaultPlotSpace;
             plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
-                                                            length:CPTDecimalFromFloat(30)];
+                                                            length:CPTDecimalFromFloat(ratings.count+1)];
             plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
                                                             length:CPTDecimalFromFloat(100)];
             
@@ -181,9 +229,15 @@
             graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
             graph.titleDisplacement = CGPointMake(0.0f, -12.0f);
             
+            CPTPlotSymbol *symbol = [CPTPlotSymbol ellipsePlotSymbol];
+            symbol.fill = [CPTFill fillWithColor:[CPTColor colorWithCGColor:mentLightOrange.CGColor]];
+            symbol.size = CGSizeMake(10.0, 10.0);
+            symbol.lineStyle = nil;
             CPTScatterPlot *lineScatterPlot = [[CPTScatterPlot alloc] initWithFrame:lineGraphHost.bounds];
             lineScatterPlot.dataSource = lineChartDatasource;
+            lineScatterPlot.plotSymbol = symbol;
             [lineScatterPlot reloadData];
+
             [graph addPlot:lineScatterPlot];
             
             for ( CPTAxis *axis in graph.axisSet.axes ) {
@@ -194,6 +248,7 @@
                     axisLabel.contentLayer.hidden = hidden;
                 }
             }
+            [activityView2 removeFromSuperview];
         });
     });
 }
@@ -208,7 +263,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Detail", @"Detail");
+        self.title = NSLocalizedString(@"Profile", @"Profile");
     }
     return self;
 }
@@ -217,7 +272,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Menu", @"Menu");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }

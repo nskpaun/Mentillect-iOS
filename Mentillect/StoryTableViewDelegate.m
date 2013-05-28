@@ -12,6 +12,7 @@
 #import "Post.h"
 #import "ReadPostViewController.h"
 #import "Mentillect.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation StoryTableViewDelegate
 
@@ -47,8 +48,14 @@
         }
     }
     
+    [cell.innerView.layer setBorderWidth:1.0f];
+    [cell.innerView.layer setBorderColor:mentDarkGray.CGColor];
+    [cell.innerView.layer setCornerRadius:5.0f];
+    
     [cell.imageLabel setImage: post.picture];
     [cell.userImageLabel setImage: post.poster.picture];
+    [cell.userImageLabel.layer setCornerRadius: cell.userImageLabel.frame.size.height/2];
+    cell.userImageLabel.clipsToBounds = YES;
     [cell.titleLabel setText:post.title];
     [cell.readButton setTag:index];
     
@@ -66,7 +73,7 @@
 }
 
 - (CGFloat)columnWidthForTableView:(HorizontalTableView *)tableView {
-    return 180.0f;
+    return 270.0f;
 }
 
 @end

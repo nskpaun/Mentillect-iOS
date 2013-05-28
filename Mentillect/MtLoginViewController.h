@@ -26,6 +26,10 @@
     
     UIPopoverController *popover;
 
+    UITextField *nameText;
+    UITextField *passText;
+    
+    BOOL disable;
     
 }
 

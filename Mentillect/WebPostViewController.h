@@ -15,6 +15,10 @@
     UIPopoverController *myPopover;
     IBOutlet UITextField *webAddress;
     IBOutlet UITextField *titleText;
+    UIImagePickerController *picker;
+    
+    float keyboardOffset;
 }
+@property (nonatomic, retain) UIImage * selectedImage;
 
 @end

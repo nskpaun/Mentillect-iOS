@@ -139,6 +139,8 @@ const NSString* ratingKey = @"Rating";
     PFFile *imgFile = [user objectForKey:pictureKey];
     NSData *data = [imgFile getData];
     muser.picture = [UIImage imageWithData:data];
+    muser.comebacks = [user objectForKey:comebacksKey];
+    muser.rating = [user objectForKey:ratingKey];
     muser._user = user;
     
     return muser;

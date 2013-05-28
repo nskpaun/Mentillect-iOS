@@ -66,6 +66,7 @@ const NSString* numberKey = @"Number";
     
     if ( number.integerValue > 50 ) {
         user.rating= [NSNumber numberWithInt:user.rating.integerValue + 1];
+        if (user.rating.integerValue > 19) user.rating = [NSNumber numberWithInt:0];
         Rating *prev = [self getLast];
         if (prev) {
             if ( prev.number.integerValue < 50 ) {

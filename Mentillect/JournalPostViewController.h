@@ -14,7 +14,7 @@
     IBOutlet UITextView *textArea;
     IBOutlet UIButton *imageButton;
     UIPopoverController *myPopover;
-        UIImagePickerController *picker;
+    UIImagePickerController *picker;
 }
 
 @property (nonatomic, retain) UIImage * selectedImage;

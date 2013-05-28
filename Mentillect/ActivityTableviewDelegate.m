@@ -10,6 +10,7 @@
 #import "ActivityCell.h"
 #import "Activity.h"
 #import "Comment.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ActivityTableviewDelegate
 
@@ -65,17 +66,18 @@
             if([currentObject isKindOfClass:[ActivityCell class]])
             {
                 cell = (ActivityCell *)currentObject;
+
                 break;
             }
         }
     }
     
     [cell.imageView setImage:activity.user.picture];
+    [cell.imageView.layer setCornerRadius:22.0f];
+    cell.imageView.clipsToBounds=YES;
     [cell.userName setText:activity.user.name];
     [cell.commentText setText:activity.text];
     [cell.activityInfo setText:activity.activityInfo];
-    
-    
     
     return cell;
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E806FC4817506FBC00E89902 /* comeback-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E806FC4717506FBC00E89902 /* comeback-arrow.png */; };
+		E806FC4A17507DDA00E89902 /* icon-ipad-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = E806FC4917507DDA00E89902 /* icon-ipad-retina.png */; };
+		E806FC4C17507DDF00E89902 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E806FC4B17507DDF00E89902 /* icon-ipad.png */; };
 		E843055C174A7E47005D0784 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055B174A7E47005D0784 /* UIKit.framework */; };
 		E843055E174A7E47005D0784 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055D174A7E47005D0784 /* Foundation.framework */; };
 		E8430560174A7E47005D0784 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055F174A7E47005D0784 /* CoreGraphics.framework */; };
@@ -51,6 +54,7 @@
 		E84305E8174B2BE7005D0784 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305E6174B2BE7005D0784 /* Activity.m */; };
 		E84305EB174B2F8A005D0784 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305EA174B2F8A005D0784 /* Comment.m */; };
 		E84305EC174B2F8A005D0784 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305EA174B2F8A005D0784 /* Comment.m */; };
+		E84AD1E51755289B0025B92F /* white-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E84AD1E41755289B0025B92F /* white-circle.png */; };
 		E8B306FC174D2D3B003248EA /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B306F6174D2D3B003248EA /* HorizontalTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E8B306FD174D2D3B003248EA /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B306F6174D2D3B003248EA /* HorizontalTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E8B306FE174D2D3B003248EA /* PageLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B306F8174D2D3B003248EA /* PageLoopViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -125,6 +129,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E806FC4717506FBC00E89902 /* comeback-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comeback-arrow.png"; sourceTree = "<group>"; };
+		E806FC4917507DDA00E89902 /* icon-ipad-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ipad-retina.png"; sourceTree = "<group>"; };
+		E806FC4B17507DDF00E89902 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ipad.png"; sourceTree = "<group>"; };
 		E8430558174A7E47005D0784 /* Mentillect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mentillect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E843055B174A7E47005D0784 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E843055D174A7E47005D0784 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -175,6 +182,8 @@
 		E84305E6174B2BE7005D0784 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E84305E9174B2F8A005D0784 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		E84305EA174B2F8A005D0784 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		E84AD1E41755289B0025B92F /* white-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-circle.png"; sourceTree = "<group>"; };
+		E84AD1E8175556090025B92F /* Mentillect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Mentillect.entitlements; sourceTree = "<group>"; };
 		E8B306F5174D2D3B003248EA /* HorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableView.h; sourceTree = "<group>"; };
 		E8B306F6174D2D3B003248EA /* HorizontalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableView.m; sourceTree = "<group>"; };
 		E8B306F7174D2D3B003248EA /* PageLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageLoopViewController.h; sourceTree = "<group>"; };
@@ -267,9 +276,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E806FC4417506FB100E89902 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E84AD1E41755289B0025B92F /* white-circle.png */,
+				E806FC4717506FBC00E89902 /* comeback-arrow.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		E843054F174A7E47005D0784 = {
 			isa = PBXGroup;
 			children = (
+				E806FC4B17507DDF00E89902 /* icon-ipad.png */,
+				E806FC4917507DDA00E89902 /* icon-ipad-retina.png */,
 				E8B30747174E6D09003248EA /* Social.framework */,
 				E8B30745174E6CF6003248EA /* libsqlite3.dylib */,
 				E8B30743174E6CED003248EA /* Accounts.framework */,
@@ -319,6 +339,8 @@
 		E8430561174A7E47005D0784 /* Mentillect */ = {
 			isa = PBXGroup;
 			children = (
+				E84AD1E8175556090025B92F /* Mentillect.entitlements */,
+				E806FC4417506FB100E89902 /* Resources */,
 				E8B3070B174D3825003248EA /* Delegates */,
 				E8C81F97174C3DCF00ADDDBC /* Layouts */,
 				E8C81F83174C362400ADDDBC /* OutsideProjects */,
@@ -570,6 +592,10 @@
 				E8B30719174D477D003248EA /* StoryCell.xib in Resources */,
 				E8B30740174E6CC3003248EA /* FacebookSDKResources.bundle in Resources */,
 				E8B8C52D174FBE5F00517D3A /* ReadPostViewController.xib in Resources */,
+				E806FC4817506FBC00E89902 /* comeback-arrow.png in Resources */,
+				E806FC4A17507DDA00E89902 /* icon-ipad-retina.png in Resources */,
+				E806FC4C17507DDF00E89902 /* icon-ipad.png in Resources */,
+				E84AD1E51755289B0025B92F /* white-circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,6 +803,8 @@
 		E8430597174A7E47005D0784 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Mentillect/Mentillect.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nathan Spaun";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -795,6 +823,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7DD36EEF-1F58-4149-9A5C-229812CDF700";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -802,6 +831,8 @@
 		E8430598174A7E47005D0784 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Mentillect/Mentillect.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nathan Spaun";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -820,6 +851,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7DD36EEF-1F58-4149-9A5C-229812CDF700";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

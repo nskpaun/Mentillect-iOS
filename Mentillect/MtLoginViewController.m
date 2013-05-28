@@ -9,7 +9,7 @@
 #import "MtLoginViewController.h"
 #import "MtUser.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "Mentillect.h"
 
 @interface MtLoginViewController ()
 
@@ -53,14 +53,48 @@
     
 }
 
+- (IBAction)existingSignIn:(id)sender {
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Existing User" message:[NSString stringWithFormat:@"%@\n\n\n\n\n",@"signIn"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    nameText = [[UITextField alloc] init];
+    [nameText setBackgroundColor:[UIColor whiteColor]];
+    nameText.delegate = self;
+    nameText.borderStyle = UITextBorderStyleLine;
+    nameText.frame = CGRectMake(15, 75, 255, 30);
+
+    nameText.placeholder = @"Username";
+    nameText.textAlignment = UITextAlignmentCenter;
+    nameText.keyboardAppearance = UIKeyboardAppearanceAlert;
+    [nameText becomeFirstResponder];
+    
+    passText = [[UITextField alloc] init];
+    [passText setBackgroundColor:[UIColor whiteColor]];
+    passText.delegate = self;
+    passText.borderStyle = UITextBorderStyleLine;
+    passText.frame = CGRectMake(15, 115, 255, 30);
+
+    passText.secureTextEntry = YES;
+    passText.placeholder = @"Password";
+    passText.textAlignment = UITextAlignmentCenter;
+    passText.keyboardAppearance = UIKeyboardAppearanceAlert;
+    
+    [alert addSubview:nameText];
+    [alert addSubview:passText];
+    
+    [alert show];
+}
+
+
 - (IBAction)signin:(id)sender {
+    if ( !disable ) {
+    disable = YES;
     if ( name.text && email.text && password.text && description.text && location.text && goal.text && selectedImage ) {
         dispatch_queue_t queue = dispatch_queue_create("com.mentillect.nkspaun", NULL);
         dispatch_async(queue, ^{
             MtUser *user1 = [MtUser createWithName:name.text withEmail:email.text withPassword:password.text withDescription:description.text withLocation:location.text withGoal:goal.text withImage:selectedImage];
             [user1 mtSave];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self dismissViewControllerAnimated:YES completion:nil];
+                [MentillectAppDelegate.navController popViewControllerAnimated:YES];
             });
         });
 
@@ -73,11 +107,14 @@
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
+        disable = NO;
+    }
     }
 }
 
 - (void)viewDidLoad
 {
+    disable = NO;
     [super viewDidLoad];
     
 
@@ -109,6 +146,13 @@
     [popover dismissPopoverAnimated:YES];
     
     
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if ( passText.text.length > 0 && nameText.text.length > 0 ) {
+        [PFUser logInWithUsername:nameText.text password:passText.text];
+        [MentillectAppDelegate.navController popViewControllerAnimated:YES];
+    }
 }
 
 @end

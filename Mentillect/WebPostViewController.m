@@ -19,6 +19,7 @@
 @end
 
 @implementation WebPostViewController
+@synthesize selectedImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,33 +47,82 @@
     [webView loadRequest:request];
 }
 - (IBAction)postPressed:(id)sender {
-    NSError *error = nil;
-    NSString *htmlSource = [webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
+    picker = [[UIImagePickerController alloc] init];
     
-    HTMLParser *parser = [[HTMLParser alloc] initWithString:htmlSource error:&error];
+    picker.delegate = self;
     
-    if (error) {
-        NSLog(@"Error: %@", error);
-        return;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        
+    {
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+    } else
+        
+    {
+        
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        
     }
     
-    HTMLNode *bodyNode = [parser body];
+    myPopover = [[UIPopoverController alloc] initWithContentViewController:picker];
+    [myPopover presentPopoverFromRect:CGRectMake(100, 100, 400, 400) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+//    NSError *error = nil;
+//    NSString *htmlSource = [webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
+//    
+//    HTMLParser *parser = [[HTMLParser alloc] initWithString:htmlSource error:&error];
+//    
+//    if (error) {
+//        NSLog(@"Error: %@", error);
+//        return;
+//    }
+//    
+//    HTMLNode *bodyNode = [parser body];
+//    
+//    NSArray *imgNodes = [bodyNode findChildTags:@"img"];
+//    imgs = [[NSMutableArray alloc] init];
+//    NSString *location = [webView stringByEvaluatingJavaScriptFromString:@"window.location"];
+//    
+//    UIActivityIndicatorView *activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+//    activityView.frame = CGRectMake(200, 200, 300, 200);
+//    [activityView setBackgroundColor:[UIColor blackColor]];
+//    [activityView setAlpha:0.5f];
+//    [activityView startAnimating];
+//    [self.view addSubview:activityView];
+//    
+//    dispatch_queue_t queue = dispatch_queue_create("com.mentillect.nkspaun", NULL);
+//    dispatch_async(queue, ^{
+//        @try {
+//            for (HTMLNode *imgNode in imgNodes) {
+//                NSString *urlString = [NSString stringWithFormat:@"%@%@",location,[imgNode getAttributeNamed:@"src"] ];
+//                NSURL *url = [NSURL URLWithString:[imgNode getAttributeNamed:@"src"]];
+//                NSData *data = [NSData dataWithContentsOfURL:url];
+//                
+//                UIImage *img = [UIImage imageWithData:data];
+//                if(img) [imgs addObject:img];
+//                
+//                url = [NSURL URLWithString:urlString];
+//                data = [NSData dataWithContentsOfURL:url];
+//                
+//                img = [UIImage imageWithData:data];
+//                if(img) [imgs addObject:img];
+//            }
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [activityView removeFromSuperview];
+//                UITableViewController *tableView = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+//                [tableView.tableView setDelegate:self];
+//                [tableView.tableView setDataSource:self];
+//                myPopover = [[UIPopoverController alloc] initWithContentViewController:tableView];
+//                [myPopover presentPopoverFromRect:CGRectMake(100, 100, 500, 100) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+//            });
+//        }
+//        @catch (NSException *e) {
+//            
+//        } @finally {
+//            
+//        }
+//    });
     
-    NSArray *imgNodes = [bodyNode findChildTags:@"img"];
-    imgs = [[NSMutableArray alloc] init];
-    
-    for (HTMLNode *imgNode in imgNodes) {
-        NSURL *url = [NSURL URLWithString:[imgNode getAttributeNamed:@"src"]];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        UIImage *img = [UIImage imageWithData:data];
-        if(img) [imgs addObject:img];
-    }
-    
-    UITableViewController *tableView = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
-    [tableView.tableView setDelegate:self];
-    [tableView.tableView setDataSource:self];
-    myPopover = [[UIPopoverController alloc] initWithContentViewController:tableView];
-    [myPopover presentPopoverFromRect:CGRectMake(100, 100, 500, 100) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
     
 }
 
@@ -111,17 +161,101 @@
     if (title.length<1) {
         title = @"My Post";
     }
-    
     Post *post = [Post createWithPicture:[imgs objectAtIndex:indexPath.row] withUrl:url withText:@"" withPoster:[MtUser getCurrentUser] withTitle:title];
-    [post save];
-    if (commentBox.text.length>0) {
-        Comment *comm = [Comment createCommentWithText:commentBox.text fromUser:[MtUser getCurrentUser] toUser:nil forPost:post];
-        [comm save];
-    }
+
     
-    [MentillectAppDelegate.navController popToRootViewControllerAnimated:YES];
+    UIActivityIndicatorView *activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityView.frame = CGRectMake(200, 200, 300, 200);
+    [activityView setBackgroundColor:[UIColor blackColor]];
+    [activityView setAlpha:0.5f];
+    [activityView startAnimating];
+    [self.view addSubview:activityView];
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.mentillect.nkspaun", NULL);
+    if (commentBox.text.length>0) {
+        
+        Comment *comm = [Comment createCommentWithText:commentBox.text fromUser:[MtUser getCurrentUser] toUser:nil forPost:post];
+        
+        dispatch_async(queue, ^{
+            [comm save];
+            dispatch_async(dispatch_get_main_queue(), ^{
+         
+            });
+        });
+        
+    }
+
+
+    dispatch_async(queue, ^{
+        [post save];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [activityView removeFromSuperview];
+            [MentillectAppDelegate.navController popToRootViewControllerAnimated:YES];
+        });
+    });
+
+    
+
 
 }
+
+#pragma mark UIImagePickerControllerDelegate
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *) Picker {
+    
+    [myPopover dismissPopoverAnimated:YES];
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *) Picker
+
+didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    selectedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [myPopover dismissPopoverAnimated:YES];
+    
+    
+    [myPopover dismissPopoverAnimated:YES];
+    NSString *url = webView.request.URL.absoluteString;
+    NSString *title = titleText.text;
+    if (title.length<1) {
+        title = @"My Post";
+    }
+    Post *post = [Post createWithPicture:selectedImage withUrl:url withText:@"" withPoster:[MtUser getCurrentUser] withTitle:title];
+    
+    
+    UIActivityIndicatorView *activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityView.frame = CGRectMake(200, 200, 300, 200);
+    [activityView setBackgroundColor:[UIColor blackColor]];
+    [activityView setAlpha:0.5f];
+    [activityView startAnimating];
+    [self.view addSubview:activityView];
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.mentillect.nkspaun", NULL);
+    if (commentBox.text.length>0) {
+        
+        Comment *comm = [Comment createCommentWithText:commentBox.text fromUser:[MtUser getCurrentUser] toUser:nil forPost:post];
+        
+        dispatch_async(queue, ^{
+            [comm save];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+            });
+        });
+        
+    }
+    
+    
+    dispatch_async(queue, ^{
+        [post save];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [activityView removeFromSuperview];
+            [MentillectAppDelegate.navController popToRootViewControllerAnimated:YES];
+        });
+    });
+    
+}
+
 
 
 @end

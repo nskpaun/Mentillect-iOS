@@ -44,8 +44,8 @@
 						<reference key="NSNextKeyView" ref="640097782"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC41MzMyMTY0MTkyIDAuNzUgMC4yMDA0MjI2MTU0AA</bytes>
+							<int key="NSColorSpace">2</int>
+							<bytes key="NSRGB">MC41ODAzOTIxODE5IDAuODU0OTAyMDI5IDAuNTQ5MDE5NjM0NwA</bytes>
 						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -56,10 +56,7 @@
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleColor" id="99367110">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MAA</bytes>
-						</object>
+						<reference key="IBUINormalTitleColor" ref="184323540"/>
 						<object class="NSColor" key="IBUINormalTitleShadowColor" id="806647838">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
@@ -82,7 +79,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">2</int>
-							<bytes key="NSRGB">MC4yNDcwNTg4Mzg2IDAuNzA5ODAzOTM4OSAwLjg3ODQzMTQzOTQAA</bytes>
+							<bytes key="NSRGB">MC45ODgyMzUzNTQ0IDAuNjU0OTAxOTgxNCAwLjMyOTQxMTc3NDkAA</bytes>
 						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -90,7 +87,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">journal</string>
 						<reference key="IBUIHighlightedTitleColor" ref="184323540"/>
-						<reference key="IBUINormalTitleColor" ref="99367110"/>
+						<reference key="IBUINormalTitleColor" ref="184323540"/>
 						<reference key="IBUINormalTitleShadowColor" ref="806647838"/>
 						<reference key="IBUIFontDescription" ref="364108223"/>
 						<reference key="IBUIFont" ref="591349734"/>
@@ -169,22 +166,6 @@
 						<int key="objectID">2</int>
 						<reference key="object" ref="766721923"/>
 						<array class="NSMutableArray" key="children">
-							<object class="IBNSLayoutConstraint" id="670867322">
-								<reference key="firstItem" ref="640097782"/>
-								<int key="firstAttribute">11</int>
-								<int key="relation">0</int>
-								<reference key="secondItem" ref="120773575"/>
-								<int key="secondAttribute">11</int>
-								<float key="multiplier">1</float>
-								<object class="IBLayoutConstant" key="constant">
-									<double key="value">0.0</double>
-								</object>
-								<float key="priority">1000</float>
-								<reference key="containingView" ref="766721923"/>
-								<int key="scoringType">6</int>
-								<float key="scoringTypeFloat">24</float>
-								<int key="contentType">2</int>
-							</object>
 							<object class="IBNSLayoutConstraint" id="397628897">
 								<reference key="firstItem" ref="766721923"/>
 								<int key="firstAttribute">6</int>
@@ -372,11 +353,6 @@
 						<reference key="object" ref="397628897"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">79</int>
-						<reference key="object" ref="670867322"/>
-						<reference key="parent" ref="766721923"/>
-					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -397,7 +373,6 @@
 					<reference ref="630164059"/>
 					<reference ref="968167657"/>
 					<reference ref="397628897"/>
-					<reference ref="670867322"/>
 				</array>
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -412,7 +387,6 @@
 				<string key="47.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="64.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="78.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>

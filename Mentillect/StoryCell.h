@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *userImageLabel;
 @property (strong, nonatomic) IBOutlet UIButton *readButton;
+@property (strong, nonatomic) IBOutlet UIView *innerView;
 
 
 

@@ -9,7 +9,7 @@
 #import "ReadPostViewController.h"
 #import "Comment.h"
 #import "ActivityCell.h"
-
+#import "Mentillect.h"
 @interface ReadPostViewController ()
 
 @end
@@ -46,19 +46,22 @@
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         [webView loadRequest:request];
     } else {
-        NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+
+
         
-        // If you go to the folder below, you will find those pictures
-        NSLog(@"%@",docDir);
+        //
+        NSString *path = [[NSBundle mainBundle] bundlePath];
+        NSURL *baseURL = [NSURL fileURLWithPath:path];
+        NSString *pngFilePath = [NSString stringWithFormat:@"%@/%@.png",path,_post.title];
         
-        NSLog(@"saving png");
-        NSString *pngFilePath = [NSString stringWithFormat:@"%@/test.png",docDir];
+                NSLog(pngFilePath);
+        //
+        [[NSFileManager defaultManager] removeItemAtPath:pngFilePath error:NULL];
         NSData *data1 = [NSData dataWithData:UIImagePNGRepresentation(_post.picture)];
         [data1 writeToFile:pngFilePath atomically:YES];
-        NSString *htmlStr = [NSString stringWithFormat:@"<img src=\"file://%@\"><br><p>%@</p>",pngFilePath, _post.text];
-        [webView loadHTMLString:htmlStr baseURL:nil];
+        NSString *htmlStr = [NSString stringWithFormat:@"<img src=\"%@.png\"><br><p>%@</p>",_post.title, _post.text];
+        [webView loadHTMLString:htmlStr baseURL:baseURL];
         
-        picPath = pngFilePath;
         
     }
     
@@ -119,11 +122,12 @@
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    NSError *error;
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSString *pngFilePath = [NSString stringWithFormat:@"%@/%@.png",path,_post.title];
     
-    // Create file manager
-    NSFileManager *fileMgr = [NSFileManager defaultManager];
-    [fileMgr removeItemAtPath:picPath error:&error];
+    NSLog(pngFilePath);
+    //
+    [[NSFileManager defaultManager] removeItemAtPath:pngFilePath error:NULL];
 }
 
 #pragma mark alertView

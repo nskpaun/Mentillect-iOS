@@ -19,7 +19,6 @@
     Post *_post;
     NSArray *_comments;
     UITextField *textField;
-    NSString* picPath;
     
 }
 

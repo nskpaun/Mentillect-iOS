@@ -24,10 +24,21 @@
     PieChartDataSource *pieChartDatasource;
     
     
+    IBOutlet UIImageView *profileImage;
     IBOutlet UITableView *activityTable;
     IBOutlet HorizontalTableView *storiesTable;
     IBOutlet CPTGraphHostingView *lineGraphHost;
     IBOutlet CPTGraphHostingView *pieGraphHost;
+    
+    IBOutlet UIView *activityContainer;
+    IBOutlet UIView *graphContainer;
+    IBOutlet UIView *storyContainer;
+    
+    IBOutlet UILabel *userLocation;
+    IBOutlet UILabel *userDesc;
+    IBOutlet UILabel *userName;
+    IBOutlet UILabel *userScore;
+    IBOutlet UILabel *userComebacks;
     
     CPTXYGraph *graph;
 }

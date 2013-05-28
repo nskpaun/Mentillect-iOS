@@ -47,12 +47,22 @@
 }
 - (IBAction)submitRating:(id)sender {
     int val = score.value;
+    
     dispatch_queue_t queue = dispatch_queue_create("com.mentillect.nkspaun", NULL);
+    
+    UIActivityIndicatorView *activityView=[[UIActivityIndicatorView alloc]     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityView.frame = CGRectMake(200, 200, 300, 200);
+    [activityView setBackgroundColor:[UIColor blackColor]];
+    [activityView setAlpha:0.5f];
+    [activityView startAnimating];
+    [self.view addSubview:activityView];
+    
     dispatch_async(queue, ^{
         Rating *rating = [Rating createRatingWithGoal:user.goal withUser:user withNumber: [NSNumber numberWithInt:val]];
         [rating ratingSave];
         dispatch_async(dispatch_get_main_queue(), ^{
-                [MentillectAppDelegate.navController popViewControllerAnimated:YES];
+            [activityView removeFromSuperview];
+            [MentillectAppDelegate.navController popViewControllerAnimated:YES];
         });
     });
 
