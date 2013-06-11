@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "MtUser.h"
 #import "Post.h"
-#import <Parse/Parse.h>
 
 @interface Comment : NSObject
 
@@ -18,7 +17,7 @@
 @property(nonatomic,strong)MtUser* toUser;
 @property(nonatomic,strong)Post* forPost;
 @property(nonatomic,strong)NSDate* date;
-@property(nonatomic,strong)PFObject* object;
+@property(nonatomic,strong)NSDictionary* object;
 
 +(Comment*)createCommentWithText:(NSString*)text
                      fromUser:(MtUser*)fuser

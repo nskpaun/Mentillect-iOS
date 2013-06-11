@@ -7,6 +7,9 @@
 //
 
 #import "Post.h"
+#import "S3Uploader.h"
+#import "ApiHelper.h"
+
 
 @implementation Post
 
@@ -17,12 +20,17 @@
 @synthesize poster;
 @synthesize created;
 @synthesize title;
+@synthesize mId;
+@synthesize pictureUrl;
 
-const NSString* postPicKey = @"thumbnail";
-const NSString* postURLKey = @"URL";
-const NSString* postTextKey = @"Text";
-const NSString* postUserKey = @"User";
-const NSString* postTitleKey = @"Title";
+const NSString* postPicKey = @"thumbnailUrl";
+const NSString* postURLKey = @"url";
+const NSString* postTextKey = @"text";
+const NSString* postUserKey = @"user";
+const NSString* postTitleKey = @"title";
+const NSString* pDateKey = @"createdDate";
+const NSString* pmIdKey = @"id";
+const NSString* pExtrasKey = @"extras";
 
 
 +(Post*)createWithPicture:(UIImage*)picture
@@ -37,15 +45,23 @@ const NSString* postTitleKey = @"Title";
     p.text = text;
     p.poster = poster;
     p.title = title;
+    p.created = [NSDate date];
     
     return p;
     
 }
 -(BOOL)save
 {
-    PFObject *obj = [self pfSerialize];
-    self.object = obj;
-    return [obj save];
+    NSDictionary *obj = [self pfSerialize];
+    obj = [ApiHelper postDataFrom:@"/posts/" withParams:[ApiHelper dictToString:obj] withAuth:NO];
+
+    NSNumber *myId = [obj objectForKey:pmIdKey];
+    if (myId){
+        NSString *key = pictureUrl;
+        [S3Uploader uploadToS3:picture withKey:key];
+        return YES;
+    }
+    return NO;
 }
 -(BOOL)update
 {
@@ -55,56 +71,59 @@ const NSString* postTitleKey = @"Title";
 {
     
 }
-+(Post*)getPostById:(NSString*)postId {
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query whereKey:@"objectId" equalTo:postId];
-    
-    return [self pfDeserialize:[[query findObjects] objectAtIndex:0]];
++(Post*)getPostById:(NSNumber*)postId {
+    NSDictionary *obj = [ApiHelper getDataFrom:[NSString stringWithFormat:@"/posts/%d/",postId.integerValue]];
+    return [self pfDeserialize:obj];
 }
 
 +(NSArray*)getRecentPosts
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query setLimit:50];
-    [query orderByDescending:@"createdAt"];
-    
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
-    for (PFObject *obj in [query findObjects]) {
+    for (NSDictionary *obj in [ApiHelper getDataFrom:@"/posts/"]) {
         [array addObject:[Post pfDeserialize:obj]];
     }
     
     return array;
 }
 
-+(Post*)pfDeserialize:(PFObject*)post
++(Post*)pfDeserialize:(NSDictionary*)post
 {
     Post *p = [[Post alloc] init];
-    PFFile *imgFile = [post objectForKey:postPicKey];
-    NSData *data = [imgFile getData];
+    NSString *keyString = [post objectForKey:postPicKey];
+    NSData *data = [S3Uploader downloadFromKey:keyString];
     p.picture = [UIImage imageWithData:data];
-    PFUser *user = [post objectForKey:postUserKey];
-    [user fetchIfNeeded];
-    p.poster = [MtUser pfDeserialize:user];
+    NSNumber *user = [post objectForKey:postUserKey];
+    p.poster = [MtUser getUserById:user.integerValue];
     p.text = [post objectForKey:postTextKey];
     p.url = [post objectForKey:postURLKey];
     p.title = [post objectForKey:postTitleKey];
+    p.mId = [post objectForKey:pmIdKey];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    p.created = [dateFormat dateFromString:[post objectForKey:pDateKey]];
     p.object = post;
     
     return p;
 }
 
--(PFObject*)pfSerialize
+-(NSDictionary*)pfSerialize
 {
-    PFObject *obj = [PFObject objectWithClassName:@"Post"];
+    NSMutableDictionary *obj = [[NSMutableDictionary alloc] init];
     [obj setObject:url forKey:postURLKey];
-    [obj setObject:poster._user forKey:postUserKey];
+    [obj setObject:poster.mId forKey:postUserKey];
     [obj setObject:text forKey:postTextKey];
-    NSData *data = UIImagePNGRepresentation(picture);
-    PFFile *imageFile = [PFFile fileWithName:@"thumbnail.png" data:data];
-    [obj setObject:imageFile forKey:postPicKey];
+
     [obj setObject:title forKey:postTitleKey];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    [obj setObject:[dateFormat stringFromDate:created] forKey:pDateKey];
+    
+    self.pictureUrl = [NSString stringWithFormat:@"postthumbnail_%d_%@", poster.mId.integerValue, [dateFormat stringFromDate:created]];
+    
+    [obj setObject:pictureUrl forKey:postPicKey];
+    [obj setObject:@"null" forKey:pExtrasKey];
     
 
     

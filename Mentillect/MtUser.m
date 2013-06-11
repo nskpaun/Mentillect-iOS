@@ -7,7 +7,9 @@
 //
 
 #import "MtUser.h"
-#import <Parse/Parse.h>
+#import "ApiHelper.h"
+#import "Mentillect.h"
+#import "S3Uploader.h"
 
 @implementation MtUser
 
@@ -21,13 +23,20 @@
 @synthesize comebacks;
 @synthesize rating;
 @synthesize _user;
+@synthesize pictureUrl;
+@synthesize mId;
 
-const NSString* descKey = @"Description";
-const NSString* locationKey = @"Location";
-const NSString* goalKey = @"Goal";
-const NSString* pictureKey = @"Picture";
-const NSString* comebacksKey = @"Comebacks";
-const NSString* ratingKey = @"Rating";
+const NSString* nameKey = @"username";
+const NSString* passwordKey = @"password";
+const NSString* emailKey = @"email";
+const NSString* descKey = @"description";
+const NSString* locationKey = @"location";
+const NSString* goalKey = @"goal";
+const NSString* pictureKey = @"pictureUrl";
+const NSString* comebacksKey = @"comebacks";
+const NSString* ratingKey = @"userRating";
+const NSString* idKey = @"id";
+const NSString* extraKey = @"extras";
 
 +(MtUser*)   createWithName:(NSString*)name
                   withEmail:(NSString*)email
@@ -47,37 +56,46 @@ const NSString* ratingKey = @"Rating";
     user.picture = image;
     user.comebacks = [NSNumber numberWithInt:0];
     user.rating = [NSNumber numberWithInt:0];
+    user.pictureUrl = [NSString stringWithFormat:@"profilepic_%@", name ];
+    
+
     
     return user;
 }
 
 -(BOOL)mtSave
 {
-    PFUser *user = [self pfSerialize];
+    NSDictionary *user = [self pfSerialize];
+    NSDictionary *dict = [ApiHelper postDataFrom:@"/users/" withParams:[ApiHelper dictToString:user] withAuth:NO];
     
-    [user signUp];
-    
-    [user save];
+    if (![[dict objectForKey:idKey] isEqual:@""]) {
+        [S3Uploader uploadToS3:picture withKey:pictureUrl];
+        [[NSUserDefaults standardUserDefaults] setValue:name forKey:@"u"];
+        [[NSUserDefaults standardUserDefaults] setValue:password forKey:@"p"];
+    }
     
     return YES;
-    
 }
 
 -(BOOL)update
 {
-    [self._user setEmail:email];
+    NSMutableDictionary *dict =[[NSMutableDictionary alloc] initWithDictionary:self._user];
+    self._user = dict;
+    [self._user setValue:email forKey:emailKey];
 
-    [self._user setUsername:name];
-    [self._user setObject:description forKey:descKey];
-    [self._user setObject:location forKey:locationKey];
-    [self._user setObject:goal forKey:goalKey];
-    [self._user setObject:comebacks forKey:comebacksKey];
-    [self._user setObject:rating forKey:ratingKey];
-    NSData *data = UIImagePNGRepresentation(picture);
-    PFFile *imageFile = [PFFile fileWithName:@"image.png" data:data];
-    [self._user setObject:imageFile forKey:pictureKey];
+    [self._user setValue:name forKey:nameKey];
+    [self._user setValue:description forKey:descKey];
+    [self._user setValue:location forKey:locationKey];
+    [self._user setValue:goal forKey:goalKey];
+    [self._user setValue:comebacks forKey:comebacksKey];
+    [self._user setValue:rating forKey:ratingKey];
+    [self._user setValue:pictureUrl forKey:pictureKey];
     
-    return [self._user save];
+    NSNumber *num = [self._user objectForKey:idKey];
+    NSString *urlString = [NSString stringWithFormat:@"/users/%d/", num.integerValue];
+    [ApiHelper postDataFrom:urlString withParams:[ApiHelper dictToString:dict] withAuth:NO];
+    
+    return true;
 }
 
 -(BOOL)destroy
@@ -86,58 +104,64 @@ const NSString* ratingKey = @"Rating";
 }
 +(MtUser*)getCurrentUser
 {
-    PFUser *cuser = [PFUser currentUser];
-    [cuser refresh];
-    if(cuser) {
-        return [self pfDeserialize:cuser];
+    if (MentillectAppDelegate.currentUser) {
+        return MentillectAppDelegate.currentUser;
+    } else {
+        NSDictionary *cuser = [ApiHelper postDataFrom:@"/MtLogin/" withParams:@"" withAuth:YES];
+        if(![[cuser objectForKey:idKey] isEqual:@""]) {
+            return [self pfDeserialize:cuser];
+        }
     }
     
     return nil;
 }
-+(MtUser*)getUserById:(NSString*)userId
++(MtUser*)getUserById:(int)userId
 {
-    PFQuery *query = [PFUser query];
-    [query whereKey:@"objectId" containedIn:[NSArray arrayWithObject:userId]];
-    NSArray* array = [query findObjects];
-    return [self pfDeserialize:[array objectAtIndex:0]];
+    MtUser *user = [MentillectAppDelegate.userCache objectForKey:[NSNumber numberWithInt:userId]];
+    if (user) return user;
+    NSDictionary *dict = [ApiHelper getDataFrom:[NSString stringWithFormat:@"/users/%d/",userId]];
+    user = [self pfDeserialize:dict];
+    [MentillectAppDelegate.userCache setObject:user forKey:user.mId];
+    return user;
     
 }
 
 -(NSString*)getObjectId {
-    return [self._user objectId];
+    [self._user objectForKey:idKey];
+    return [self._user objectForKey:idKey];
 }
 
--(PFUser*)pfSerialize
+-(NSDictionary*)pfSerialize
 {
-    PFUser *user = [[PFUser alloc] init];
-    [user setEmail:email];
-    [user setPassword:password];
-    [user setUsername:name];
-    [user setObject:description forKey:descKey];
-    [user setObject:location forKey:locationKey];
-    [user setObject:goal forKey:goalKey];
-    [user setObject:comebacks forKey:comebacksKey];
-    [user setObject:rating forKey:ratingKey];
-    NSData *data = UIImagePNGRepresentation(picture);
-    PFFile *imageFile = [PFFile fileWithName:@"image.png" data:data];
-    [user setObject:imageFile forKey:pictureKey];
+    NSDictionary *user = [[NSMutableDictionary alloc] init];
+    [user setValue:email forKey:emailKey];
+    [user setValue:name forKey:nameKey];
+    [user setValue:password forKey:passwordKey];
+    [user setValue:description forKey:descKey];
+    [user setValue:location forKey:locationKey];
+    [user setValue:goal forKey:goalKey];
+    [user setValue:comebacks forKey:comebacksKey];
+    [user setValue:rating forKey:ratingKey];
+    [user setValue:pictureUrl forKey:pictureKey];
+    [user setValue:@"null" forKey:extraKey];
     
     self._user = user;
     
     return user;
 }
 
-+(MtUser*)pfDeserialize:(PFUser*)user
++(MtUser*)pfDeserialize:(NSDictionary*)user
 {
     MtUser *muser = [[MtUser alloc] init];
-    muser.name = [user username];
-    muser.email = [user email];
-    muser.password = [user password];
+    muser.mId = [user objectForKey:idKey];
+    muser.name = [user objectForKey:nameKey];
+    muser.email = [user objectForKey:emailKey];
+    muser.password = [user objectForKey:passwordKey];
     muser.description = [user objectForKey:descKey];
     muser.location = [user objectForKey:locationKey];
     muser.goal = [user objectForKey:goalKey];
-    PFFile *imgFile = [user objectForKey:pictureKey];
-    NSData *data = [imgFile getData];
+    muser.pictureUrl = [user objectForKey:pictureKey];
+    NSData *data = [S3Uploader downloadFromKey:muser.pictureUrl];
     muser.picture = [UIImage imageWithData:data];
     muser.comebacks = [user objectForKey:comebacksKey];
     muser.rating = [user objectForKey:ratingKey];
@@ -145,5 +169,19 @@ const NSString* ratingKey = @"Rating";
     
     return muser;
 }
++(void*)login:(NSString*)u p:(NSString*)p {
+    [[NSUserDefaults standardUserDefaults] setValue:u forKey:@"u"];
+    [[NSUserDefaults standardUserDefaults] setValue:p forKey:@"p"];
+}
 
+-(void*)logout
+{
+    [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:@"u"];
+    [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:@"p"];
+    
+    [ApiHelper getDataFrom:@"/MtLogout/"];
+    
+    MentillectAppDelegate.currentUser = nil;
+    
+}
 @end

@@ -152,12 +152,13 @@
 - (void)currentPageIndexDidChange {
     CGSize pageSize = [self pageSize];
     CGFloat columnWidth = [self columnWidth];
-    _visibleColumnCount = pageSize.width / columnWidth + 2;
+    if ( columnWidth == 0 ) _visibleColumnCount = 2;
+    else _visibleColumnCount = pageSize.width / columnWidth + 2;
     
     NSInteger leftMostPageIndex = -1;
     NSInteger rightMostPageIndex = 0;
     
-    for (NSInteger i = -2; i < _visibleColumnCount; i++) {
+    for (NSInteger i = -2; i < _visibleColumnCount ; i++) {
         NSInteger index = _currentPhysicalPageIndex + i;
         if (index < [self.pageViews count] && (index >= 0)) {
             [self layoutPhysicalPage:index];

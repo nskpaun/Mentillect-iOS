@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, PFLogInViewControllerDelegate, NSURLConnectionDataDelegate, UITabBarControllerDelegate>
+#import "MtUser.h"
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NSURLConnectionDataDelegate, UITabBarControllerDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) MtUser *currentUser;
+@property (nonatomic, strong) NSMutableDictionary *userCache;
 
 @property (nonatomic, strong) UINavigationController *navController;
 

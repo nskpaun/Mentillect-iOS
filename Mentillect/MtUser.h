@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Parse/Parse.h>
 
 @interface MtUser : NSObject
 
@@ -17,10 +16,12 @@
 @property(nonatomic, copy) NSString *description;
 @property(nonatomic, copy) NSString *location;
 @property(nonatomic, copy) NSString *goal;
+@property(nonatomic, copy) NSString *pictureUrl;
 @property(nonatomic, strong) UIImage *picture;
 @property(nonatomic, strong) NSNumber *comebacks;
 @property(nonatomic, strong) NSNumber *rating;
-@property(nonatomic,strong) PFUser* _user;
+@property(nonatomic, strong) NSDictionary* _user;
+@property(nonatomic, strong) NSNumber *mId;
 
 +(MtUser*)   createWithName:(NSString*)name
                 withEmail:(NSString*)email
@@ -34,6 +35,9 @@
 -(BOOL)destroy;
 -(NSString*)getObjectId;
 +(MtUser*)getCurrentUser;
-+(MtUser*)pfDeserialize:(PFUser*)user;
++(void*)login:(NSString*)u p:(NSString*)p;
++(MtUser*)pfDeserialize:(NSDictionary*)user;
++(MtUser*)getUserById:(int)userId;
+-(void*)logout;
 
 @end

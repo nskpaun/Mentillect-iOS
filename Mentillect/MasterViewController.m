@@ -12,6 +12,8 @@
 #import "Mentillect.h"
 #import "RatingViewController.h"
 #import "PostSelectionViewController.h"
+#import "GroupsViewController.h"
+#import "MtLoginViewController.h"
 #import "MtUser.h"
 
 @interface MasterViewController () {
@@ -35,13 +37,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-//
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-//    self.navigationItem.rightBarButtonItem = addButton;
+    [self insertNewObject:@"Log Out"];
+    [self insertNewObject:@"Groups"];
     [self insertNewObject:@"New Post"];
     [self insertNewObject:@"Rate Your Day"];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,6 +128,14 @@
     } else if (indexPath.row == 1){
         PostSelectionViewController *psvc = [[PostSelectionViewController alloc]initWithNibName:@"PostSelectionViewController" bundle:nil];
         [MentillectAppDelegate.navController pushViewController:psvc animated:YES];
+    } else if ( indexPath.row == 2 ) {
+        GroupsViewController *ngvc = [[GroupsViewController alloc] initWithNibName:@"GroupsViewController" bundle:nil];
+        [MentillectAppDelegate.navController pushViewController:ngvc animated:YES];
+    } else if ( indexPath.row == 3 ) {
+        [[MtUser getCurrentUser] logout];
+        [MentillectAppDelegate.navController popToRootViewControllerAnimated:YES];
+        MtLoginViewController *ngvc = [[MtLoginViewController alloc] initWithNibName:@"MtLoginViewController" bundle:nil];
+        [MentillectAppDelegate.navController pushViewController:ngvc animated:YES];
     }
 }
 

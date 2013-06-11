@@ -12,23 +12,18 @@
 
 #import "MyProfileViewController.h"
 
-#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
+@synthesize userCache;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Parse setApplicationId:@"PGCDZB4xx6SilrPPNxIn086gKvA7dZflAAntcdLR"
-                  clientKey:@"AgiLu7XNQjz4Se2sZVuRfCOMGIIGcsYVJsYaP9nS"];
-    
-    
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+    userCache = [[NSMutableDictionary alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     [self pushSplitView];
     // Override point for customization after application launch.
-
 
     return YES;
 }
@@ -44,9 +39,10 @@
     masterViewController.detailViewController = detailViewController;
     
     self.splitViewController = [[UISplitViewController alloc] init];
+    self.splitViewController.viewControllers = @[masterNavigationController, detailNavigationController];
     self.splitViewController.delegate = detailViewController;
     self.navController = detailNavigationController;
-    self.splitViewController.viewControllers = @[masterNavigationController, detailNavigationController];
+
     self.window.rootViewController = self.splitViewController;
     [self.window makeKeyAndVisible];
 }

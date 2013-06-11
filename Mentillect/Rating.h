@@ -15,7 +15,7 @@
 @property(nonatomic,strong)MtUser* user;
 @property(nonatomic)NSNumber* number;
 @property(nonatomic,copy)NSString* goal;
-@property(nonatomic,strong)PFObject* object;
+@property(nonatomic,strong)NSDictionary* object;
 
 +(Rating*)createRatingWithGoal:(NSString*)goal
                       withUser:(MtUser*)user

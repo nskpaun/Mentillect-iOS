@@ -7,6 +7,7 @@
 //
 
 #import "Rating.h"
+#import "ApiHelper.h"
 
 @implementation Rating
 
@@ -16,10 +17,11 @@
 @synthesize goal;
 @synthesize object;
 
-const NSString* userKey = @"User";
-const NSString* dateKey = @"Date";
-const NSString* rGoalKey = @"Goal";
-const NSString* numberKey = @"Number";
+const NSString* userKey = @"forUser";
+const NSString* dateKey = @"createdDate";
+const NSString* rGoalKey = @"goal";
+const NSString* numberKey = @"number";
+const NSString* rExtraKey = @"extras";
 
 +(Rating*)createRatingWithGoal:(NSString*)goal
                       withUser:(MtUser*)user
@@ -36,33 +38,32 @@ const NSString* numberKey = @"Number";
 }
 +(NSArray*)getRatingsForUser:(MtUser*)user withGoal:(NSString*)goal
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
-    [query whereKey:userKey equalTo:user._user];
-    [query orderByAscending:@"createdAt"];
-    [query setLimit:100];
+    NSString *urlString = [NSString stringWithFormat:@"/users/%d/ratings/", user.mId.integerValue ];
+    
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    for (PFObject *obj in [query findObjects])
+    for (NSDictionary *obj in [ApiHelper getDataFrom:urlString])
     {
-        [array addObject:[self pfDeserialize:obj]];
+        [array addObject:[self pfDeserialize:obj] ];
     }
     return array;
 }
 
 -(Rating*)getLast
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
-    [query whereKey:userKey equalTo:user._user];
-    [query orderByDescending:@"createdAt"];
-    [query setLimit:1];
-    for (PFObject *obj in [query findObjects])
-    {
-        return [Rating pfDeserialize:obj];
+    NSString *urlString = [NSString stringWithFormat:@"/users/%d/ratings/", user.mId.integerValue ];
+    NSArray *array = [ApiHelper getDataFrom:urlString];
+    if (array.count > 1 ) {
+        NSDictionary *obj = [array objectAtIndex:array.count-2];
+        return [Rating pfDeserialize:obj] ;
     }
+   
     return nil;
 }
 
 -(BOOL)ratingSave{
-    PFObject *obj = [self pfSerialize];
+    NSDictionary *obj = [self pfSerialize];
+    
+    [ApiHelper postDataFrom:@"/ratings/" withParams:[ApiHelper dictToString:obj] withAuth:NO];
     
     if ( number.integerValue > 50 ) {
         user.rating= [NSNumber numberWithInt:user.rating.integerValue + 1];
@@ -77,47 +78,48 @@ const NSString* numberKey = @"Number";
         [user update];
     }
     
-    return [obj save];
+    return YES;
 
 }
 
--(PFObject*)pfSerialize
+-(NSDictionary*)pfSerialize
 {
-    self.object = [PFObject objectWithClassName:@"Rating"];
-    [self.object setObject:user._user forKey:userKey];
-    [self.object setObject:number forKey:numberKey];
-    [self.object setObject:created forKey:dateKey];
-    [self.object setObject:goal forKey:rGoalKey];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    self.object = [[NSMutableDictionary alloc] init];
+    [self.object setValue:user.mId forKey:userKey];
+    [self.object setValue:number forKey:numberKey];
+    
+    [self.object setValue:[dateFormat stringFromDate:created] forKey:dateKey];
+    [self.object setValue:goal forKey:rGoalKey];
+    [self.object setValue:@"null" forKey:rExtraKey];
+    
     
     return self.object;
 }
 
-+(Rating*)pfDeserialize:(PFObject*)rating
++(Rating*)pfDeserialize:(NSDictionary*)rating
 {
     Rating* mtRating = [[Rating alloc] init];
     mtRating.object = rating;
-    PFUser *user = [rating objectForKey:userKey];
-    [user fetchIfNeeded];
-    mtRating.user  = [MtUser pfDeserialize:user];
+    NSNumber * num =  [rating objectForKey:userKey];
+    mtRating.user  = [MtUser getUserById: num.integerValue];
     mtRating.number = [rating objectForKey:numberKey];
     mtRating.goal = [rating objectForKey:rGoalKey];
-    mtRating.created = [rating objectForKey:dateKey];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    mtRating.created = [dateFormat dateFromString:[rating objectForKey:dateKey]];
     
     return mtRating;
 }
 
 +(NSArray*)recentRatings {
-    PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
-    [query setLimit:50];
-    [query orderByDescending:@"createdAt"];
-    
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    
-    for (PFObject *obj in [query findObjects]) {
-        [array addObject:[Rating pfDeserialize:obj]];
+    for (NSDictionary *obj in [ApiHelper getDataFrom:@"/ratings/"])
+    {
+        [array addObject:[self pfDeserialize:obj] ];
     }
-    
     return array;
 }
 

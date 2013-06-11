@@ -65,6 +65,7 @@
     nameText.placeholder = @"Username";
     nameText.textAlignment = UITextAlignmentCenter;
     nameText.keyboardAppearance = UIKeyboardAppearanceAlert;
+    nameText.autocapitalizationType = NO;
     [nameText becomeFirstResponder];
     
     passText = [[UITextField alloc] init];
@@ -150,7 +151,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if ( passText.text.length > 0 && nameText.text.length > 0 ) {
-        [PFUser logInWithUsername:nameText.text password:passText.text];
+        [MtUser login:nameText.text p:passText.text];
         [MentillectAppDelegate.navController popViewControllerAnimated:YES];
     }
 }

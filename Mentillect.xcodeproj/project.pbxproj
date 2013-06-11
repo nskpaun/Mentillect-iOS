@@ -10,6 +10,9 @@
 		E806FC4817506FBC00E89902 /* comeback-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E806FC4717506FBC00E89902 /* comeback-arrow.png */; };
 		E806FC4A17507DDA00E89902 /* icon-ipad-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = E806FC4917507DDA00E89902 /* icon-ipad-retina.png */; };
 		E806FC4C17507DDF00E89902 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E806FC4B17507DDF00E89902 /* icon-ipad.png */; };
+		E83A7404175B0E990089078E /* MtGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E83A7403175B0E990089078E /* MtGroup.m */; };
+		E83A7408175B15280089078E /* NewGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E83A7406175B15280089078E /* NewGroupViewController.m */; };
+		E83A7409175B15280089078E /* NewGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E83A7407175B15280089078E /* NewGroupViewController.xib */; };
 		E843055C174A7E47005D0784 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055B174A7E47005D0784 /* UIKit.framework */; };
 		E843055E174A7E47005D0784 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055D174A7E47005D0784 /* Foundation.framework */; };
 		E8430560174A7E47005D0784 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E843055F174A7E47005D0784 /* CoreGraphics.framework */; };
@@ -55,6 +58,10 @@
 		E84305EB174B2F8A005D0784 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305EA174B2F8A005D0784 /* Comment.m */; };
 		E84305EC174B2F8A005D0784 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E84305EA174B2F8A005D0784 /* Comment.m */; };
 		E84AD1E51755289B0025B92F /* white-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E84AD1E41755289B0025B92F /* white-circle.png */; };
+		E84AD1EC1756B4910025B92F /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84AD1EB1756B4910025B92F /* AWSS3.framework */; };
+		E84AD1F01756B5180025B92F /* AWSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84AD1EF1756B5180025B92F /* AWSRuntime.framework */; };
+		E84AD1F41756B5BF0025B92F /* S3Uploader.m in Sources */ = {isa = PBXBuildFile; fileRef = E84AD1F31756B5BF0025B92F /* S3Uploader.m */; };
+		E84AD1F71756CFD90025B92F /* ApiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E84AD1F61756CFD90025B92F /* ApiHelper.m */; };
 		E8B306FC174D2D3B003248EA /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B306F6174D2D3B003248EA /* HorizontalTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E8B306FD174D2D3B003248EA /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B306F6174D2D3B003248EA /* HorizontalTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E8B306FE174D2D3B003248EA /* PageLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B306F8174D2D3B003248EA /* PageLoopViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -82,6 +89,8 @@
 		E8B30744174E6CED003248EA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30743174E6CED003248EA /* Accounts.framework */; };
 		E8B30746174E6CF6003248EA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30745174E6CF6003248EA /* libsqlite3.dylib */; };
 		E8B30748174E6D09003248EA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B30747174E6D09003248EA /* Social.framework */; };
+		E8B758EA175D56DD0071D67F /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B758E8175D56DD0071D67F /* GroupsViewController.m */; };
+		E8B758EB175D56DD0071D67F /* GroupsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B758E9175D56DD0071D67F /* GroupsViewController.xib */; };
 		E8B8C52C174FBE5F00517D3A /* ReadPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B8C52A174FBE5F00517D3A /* ReadPostViewController.m */; };
 		E8B8C52D174FBE5F00517D3A /* ReadPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B8C52B174FBE5F00517D3A /* ReadPostViewController.xib */; };
 		E8C81F7C174C27CE00ADDDBC /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F7A174C27CE00ADDDBC /* RatingViewController.m */; };
@@ -102,6 +111,10 @@
 		E8C81F9C174C480900ADDDBC /* JournalPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C81F99174C480900ADDDBC /* JournalPostViewController.m */; };
 		E8C81F9D174C480900ADDDBC /* JournalPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F9A174C480900ADDDBC /* JournalPostViewController.xib */; };
 		E8C81F9E174C480900ADDDBC /* JournalPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C81F9A174C480900ADDDBC /* JournalPostViewController.xib */; };
+		E8F8D28017668574001E2426 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F8D27F17668574001E2426 /* Default-Landscape~ipad.png */; };
+		E8F8D28217668577001E2426 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F8D28117668577001E2426 /* Default-Landscape@2x~ipad.png */; };
+		E8F8D2841766857F001E2426 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F8D2831766857F001E2426 /* Default-Portrait~ipad.png */; };
+		E8F8D28617668581001E2426 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F8D28517668581001E2426 /* Default-Portrait@2x~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +145,11 @@
 		E806FC4717506FBC00E89902 /* comeback-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comeback-arrow.png"; sourceTree = "<group>"; };
 		E806FC4917507DDA00E89902 /* icon-ipad-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ipad-retina.png"; sourceTree = "<group>"; };
 		E806FC4B17507DDF00E89902 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ipad.png"; sourceTree = "<group>"; };
+		E83A7402175B0E990089078E /* MtGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtGroup.h; sourceTree = "<group>"; };
+		E83A7403175B0E990089078E /* MtGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGroup.m; sourceTree = "<group>"; };
+		E83A7405175B15280089078E /* NewGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGroupViewController.h; sourceTree = "<group>"; };
+		E83A7406175B15280089078E /* NewGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGroupViewController.m; sourceTree = "<group>"; };
+		E83A7407175B15280089078E /* NewGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewGroupViewController.xib; sourceTree = "<group>"; };
 		E8430558174A7E47005D0784 /* Mentillect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mentillect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E843055B174A7E47005D0784 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E843055D174A7E47005D0784 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -184,6 +202,12 @@
 		E84305EA174B2F8A005D0784 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		E84AD1E41755289B0025B92F /* white-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-circle.png"; sourceTree = "<group>"; };
 		E84AD1E8175556090025B92F /* Mentillect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Mentillect.entitlements; sourceTree = "<group>"; };
+		E84AD1EB1756B4910025B92F /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
+		E84AD1EF1756B5180025B92F /* AWSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSRuntime.framework; sourceTree = "<group>"; };
+		E84AD1F21756B5BF0025B92F /* S3Uploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S3Uploader.h; sourceTree = "<group>"; };
+		E84AD1F31756B5BF0025B92F /* S3Uploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S3Uploader.m; sourceTree = "<group>"; };
+		E84AD1F51756CFD90025B92F /* ApiHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiHelper.h; sourceTree = "<group>"; };
+		E84AD1F61756CFD90025B92F /* ApiHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiHelper.m; sourceTree = "<group>"; };
 		E8B306F5174D2D3B003248EA /* HorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableView.h; sourceTree = "<group>"; };
 		E8B306F6174D2D3B003248EA /* HorizontalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableView.m; sourceTree = "<group>"; };
 		E8B306F7174D2D3B003248EA /* PageLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageLoopViewController.h; sourceTree = "<group>"; };
@@ -210,6 +234,9 @@
 		E8B30743174E6CED003248EA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E8B30745174E6CF6003248EA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E8B30747174E6D09003248EA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		E8B758E7175D56DD0071D67F /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
+		E8B758E8175D56DD0071D67F /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
+		E8B758E9175D56DD0071D67F /* GroupsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupsViewController.xib; sourceTree = "<group>"; };
 		E8B8C529174FBE5F00517D3A /* ReadPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadPostViewController.h; sourceTree = "<group>"; };
 		E8B8C52A174FBE5F00517D3A /* ReadPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadPostViewController.m; sourceTree = "<group>"; };
 		E8B8C52B174FBE5F00517D3A /* ReadPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadPostViewController.xib; sourceTree = "<group>"; };
@@ -231,6 +258,10 @@
 		E8C81F98174C480900ADDDBC /* JournalPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalPostViewController.h; sourceTree = "<group>"; };
 		E8C81F99174C480900ADDDBC /* JournalPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalPostViewController.m; sourceTree = "<group>"; };
 		E8C81F9A174C480900ADDDBC /* JournalPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalPostViewController.xib; sourceTree = "<group>"; };
+		E8F8D27F17668574001E2426 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		E8F8D28117668577001E2426 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		E8F8D2831766857F001E2426 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		E8F8D28517668581001E2426 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +290,8 @@
 				E843055E174A7E47005D0784 /* Foundation.framework in Frameworks */,
 				E84305B8174A86DE005D0784 /* Parse.framework in Frameworks */,
 				E8B3073E174E6C72003248EA /* FacebookSDK.framework in Frameworks */,
+				E84AD1EC1756B4910025B92F /* AWSS3.framework in Frameworks */,
+				E84AD1F01756B5180025B92F /* AWSRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,10 +321,16 @@
 		E843054F174A7E47005D0784 = {
 			isa = PBXGroup;
 			children = (
+				E8F8D28517668581001E2426 /* Default-Portrait@2x~ipad.png */,
+				E8F8D2831766857F001E2426 /* Default-Portrait~ipad.png */,
+				E8F8D28117668577001E2426 /* Default-Landscape@2x~ipad.png */,
+				E8F8D27F17668574001E2426 /* Default-Landscape~ipad.png */,
 				E806FC4B17507DDF00E89902 /* icon-ipad.png */,
 				E806FC4917507DDA00E89902 /* icon-ipad-retina.png */,
 				E8B30747174E6D09003248EA /* Social.framework */,
 				E8B30745174E6CF6003248EA /* libsqlite3.dylib */,
+				E84AD1EF1756B5180025B92F /* AWSRuntime.framework */,
+				E84AD1EB1756B4910025B92F /* AWSS3.framework */,
 				E8B30743174E6CED003248EA /* Accounts.framework */,
 				E8B30741174E6CE5003248EA /* AdSupport.framework */,
 				E8B3072C174D5337003248EA /* CorePlot-CocoaTouch.xcodeproj */,
@@ -340,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				E84AD1E8175556090025B92F /* Mentillect.entitlements */,
+				E84AD1F11756B5920025B92F /* Helpers */,
 				E806FC4417506FB100E89902 /* Resources */,
 				E8B3070B174D3825003248EA /* Delegates */,
 				E8C81F97174C3DCF00ADDDBC /* Layouts */,
@@ -415,6 +455,12 @@
 				E8B8C529174FBE5F00517D3A /* ReadPostViewController.h */,
 				E8B8C52A174FBE5F00517D3A /* ReadPostViewController.m */,
 				E8B8C52B174FBE5F00517D3A /* ReadPostViewController.xib */,
+				E83A7405175B15280089078E /* NewGroupViewController.h */,
+				E83A7406175B15280089078E /* NewGroupViewController.m */,
+				E83A7407175B15280089078E /* NewGroupViewController.xib */,
+				E8B758E7175D56DD0071D67F /* GroupsViewController.h */,
+				E8B758E8175D56DD0071D67F /* GroupsViewController.m */,
+				E8B758E9175D56DD0071D67F /* GroupsViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -432,8 +478,21 @@
 				E84305E6174B2BE7005D0784 /* Activity.m */,
 				E84305E9174B2F8A005D0784 /* Comment.h */,
 				E84305EA174B2F8A005D0784 /* Comment.m */,
+				E83A7402175B0E990089078E /* MtGroup.h */,
+				E83A7403175B0E990089078E /* MtGroup.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		E84AD1F11756B5920025B92F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E84AD1F21756B5BF0025B92F /* S3Uploader.h */,
+				E84AD1F31756B5BF0025B92F /* S3Uploader.m */,
+				E84AD1F51756CFD90025B92F /* ApiHelper.h */,
+				E84AD1F61756CFD90025B92F /* ApiHelper.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		E8B3070B174D3825003248EA /* Delegates */ = {
@@ -596,6 +655,12 @@
 				E806FC4A17507DDA00E89902 /* icon-ipad-retina.png in Resources */,
 				E806FC4C17507DDF00E89902 /* icon-ipad.png in Resources */,
 				E84AD1E51755289B0025B92F /* white-circle.png in Resources */,
+				E83A7409175B15280089078E /* NewGroupViewController.xib in Resources */,
+				E8B758EB175D56DD0071D67F /* GroupsViewController.xib in Resources */,
+				E8F8D28017668574001E2426 /* Default-Landscape~ipad.png in Resources */,
+				E8F8D28217668577001E2426 /* Default-Landscape@2x~ipad.png in Resources */,
+				E8F8D2841766857F001E2426 /* Default-Portrait~ipad.png in Resources */,
+				E8F8D28617668581001E2426 /* Default-Portrait@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +727,11 @@
 				E8B30739174E62CB003248EA /* LineChartDatasource.m in Sources */,
 				E8B3073C174E6307003248EA /* PieChartDataSource.m in Sources */,
 				E8B8C52C174FBE5F00517D3A /* ReadPostViewController.m in Sources */,
+				E84AD1F41756B5BF0025B92F /* S3Uploader.m in Sources */,
+				E84AD1F71756CFD90025B92F /* ApiHelper.m in Sources */,
+				E83A7404175B0E990089078E /* MtGroup.m in Sources */,
+				E83A7408175B15280089078E /* NewGroupViewController.m in Sources */,
+				E8B758EA175D56DD0071D67F /* GroupsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +875,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Mentillect/Mentillect.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nathan Spaun";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -824,6 +895,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7DD36EEF-1F58-4149-9A5C-229812CDF700";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -833,6 +905,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Mentillect/Mentillect.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nathan Spaun";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -852,6 +925,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7DD36EEF-1F58-4149-9A5C-229812CDF700";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

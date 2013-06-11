@@ -67,7 +67,7 @@
     [super viewDidAppear:animated];
     
     user = [MtUser getCurrentUser];
-    if (!user) {
+    if (!user || user.mId.integerValue<1) {
         MtLoginViewController *livc = [[MtLoginViewController alloc] initWithNibName:@"MtLoginViewController" bundle:nil];
         [MentillectAppDelegate.navController pushViewController:livc animated:YES];
     } else {
